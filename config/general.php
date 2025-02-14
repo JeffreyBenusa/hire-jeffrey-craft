@@ -26,5 +26,7 @@ return GeneralConfig::create()
     ])
     // Set the login to /cp
     ->cpTrigger(App::env('CRAFT_CP_TRIGGER') ?: 'cp')
-    //
-    ->devMode(App::env('DEV_MODE') ?: false);
+    // Dev Mode
+    ->devMode(App::env('CRAFT_DEV_MODE') ?: false)
+    // Prevent Robots and Cralwers
+    ->disallowrobots(App::env('CRAFT_DISALLOW_ROBOTS') ?: false);

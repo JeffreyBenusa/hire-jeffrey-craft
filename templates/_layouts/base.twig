@@ -3,10 +3,39 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="utf-8"/>
-    <title>{{ entry.title ~ " | HireJeffrey.com" | default("Hire Jeffrey") }} </title>
-    <meta name="description" content="{{ entry.description ??? globals.description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="referrer" content="strict-origin-when-cross-origin"/>
+
+    {# Set default values #}
+    {% set seoTitle = entry.title ~ " | HireJeffrey.com" | default("Hire Jeffrey | Engineering Leadership & Web Development") %}
+    {% set seoDescription = entry.description ??? globals.description %}
+    {% set seoUrl = entry.url ??? siteUrl %}
+    {% set seoImage = entry.image.one() ??? globals.image.one() %}
+
+    {# Standard Meta Tags #}
+    <title>{{ seoTitle }} </title>
+    <meta name="description" content="{{ seoDescription }}">
+    <link rel="canonical" href="{{ seoUrl }}">
+    <meta name="robots" content="index, follow" />
+
+    {# Open Graph (Facebook, LinkedIn, etc.) #}
+    <meta property="og:title" content="{{ seoTitle }}">
+    <meta property="og:description" content="{{ seoDescription }}">
+    <meta property="og:url" content="{{ entry.url ?? siteUrl }}">
+    <meta property="og:image" content="{{ seoImage.getUrl('openGraph') }}">
+    <meta property="og:image:alt" content="Jeffrey Benusa - Engineering Leadership & Web Development">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hire Jeffrey">
+    <meta property="og:locale" content="en_US">
+
+    {# Twitter Cards #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ seoTitle }}">
+    <meta name="twitter:description" content="{{ seoDescription }}">
+    <meta name="twitter:image" content="{{ seoImage.getUrl('twitter') }}">
+    <meta name="twitter:image:alt" content="Jeffrey Benusa - Engineering Leadership & Web Development">
+    <meta name="twitter:site" content="@nerd_from_mn">
+    <meta name="twitter:creator" content="@nerd_from_mn">
 
     <script>
         // Define the cookie name and expiration

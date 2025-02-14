@@ -1,0 +1,11 @@
+fill: null
+format: png
+handle: openGraph
+height: 630
+interlace: none
+mode: crop
+name: 'Open Graph'
+position: center-center
+quality: 80
+upscale: true
+width: 1200
