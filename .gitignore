@@ -18,7 +18,6 @@
 
 # Ignore Composer dependencies (if using Composer for dependency management)
 vendor/
-composer.lock
 
 # Ignore Node modules (if using Tailwind, Webpack, or other frontend tools)
 node_modules/
