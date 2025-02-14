@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: skillsAndTechnologies
+instructions: null
+name: 'Skills and Technologies'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: false
+  source: 'group:6d83f877-39da-4cba-b7ec-c7a9d9d3a403' # Skills And Technology
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Categories

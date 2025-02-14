@@ -1,0 +1,61 @@
+# Ignore .env and environment-specific configuration
+.env
+.env.*
+!.env.example
+
+# Craft CMS runtime & storage files
+/storage/
+!/storage/rebrand/
+!/storage/config-backups/
+
+# User uploads (optional – remove if you want to track)
+!/storage/uploads/ # Keep folder structure, but ignore uploaded files
+/storage/uploads/*
+
+# Ignore cache and session data
+/storage/runtime/
+!/storage/runtime/rebrand/
+
+# Ignore Composer dependencies (if using Composer for dependency management)
+vendor/
+composer.lock
+
+# Ignore Node modules (if using Tailwind, Webpack, or other frontend tools)
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Craft generated resources
+web/cpresources/*
+
+# Dist files
+web/dist/*
+
+# Ignore Craft CMS project config files (only if you manage config in another way)
+project.yaml
+
+# Ignore system logs
+/storage/logs/
+logs/
+
+# Ignore backups
+/storage/backups/
+database.sql
+*.sql
+
+# MacOS & IDE files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Ignore deployment files
+deploy.php
+deploy.yaml
+
+
+

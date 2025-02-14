@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: f97878e5-5b0c-4591-9251-1e45cbefc029 # Page
+handle: page
+maxAuthors: 1
+name: Page
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
+    enabledByDefault: true
+    hasUrls: true
+    template: page/_entry.twig
+    uriFormat: '{slug}'
+type: channel

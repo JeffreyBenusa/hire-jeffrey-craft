@@ -1,0 +1,50 @@
+defaultPlacement: end
+fieldLayouts:
+  b9b59bc3-1c85-4d65-92b4-8a5ae9519608:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-02-11T04:35:45+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: a97b85a4-c2db-4ce5-a6d4-1dae8d2677ac
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 84eb561c-a310-4253-9f72-d0e5dfb39bc3
+        userCondition: null
+handle: skillsAndTechnology
+name: 'Skills And Technology'
+siteSettings:
+  7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 20a7b549-a2dd-4254-b3fb-5b0d877f4489

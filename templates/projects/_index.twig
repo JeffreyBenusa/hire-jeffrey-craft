@@ -1,0 +1,28 @@
+{% extends '_layouts/base' %}
+{% set entries = craft.entries()
+    .section('projects')
+    .all() %}
+
+{% block content %}
+    <div class="bg-teal py-28">
+        <article class="max-w-5xl mx-auto px-2">
+            <header class="text-white">
+                <h1 class="text-3xl lg:text-6xl font-bold">
+                    <span class="block">Diverse Challenges.</span>
+                    <span class="block">Deep Expertise.</span>
+                    <span class="block">Results That Scale.</span>
+                </h1>
+                <p class="mt-4 text-xl lg:text-2xl italic">
+                    Leveraging a deep technical toolkit to deliver results that matter.
+                </p>
+            </header>
+            <section class="mt-8 lg:mt-16 grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-2 max-lg:max-w-lg max-lg:mx-auto">
+                {% for project in entries %}
+                    {% include 'projects/_partials/card' with { params: {
+                        entry: project
+                    }} %}
+                {% endfor %}
+            </section>
+        </article>
+    </div>
+{% endblock %}

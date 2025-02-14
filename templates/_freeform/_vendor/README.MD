@@ -1,0 +1,1 @@
+### Adding tailwind template files into templates directory to give tailwind.config.js references to import classes instead of pointing to /vendor. 

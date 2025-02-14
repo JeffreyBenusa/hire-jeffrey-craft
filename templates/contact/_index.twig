@@ -1,0 +1,32 @@
+{% extends '_layouts/base' %}
+
+{% block content %}
+    <div class="bg-white text-gray-800">
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+            <h1 class="max-w-2xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">Let's Build Something Great Together</h1>
+            <p class="mt-6 max-w-xl text-pretty text-lg/8 text-gray-800">Whether you need a developer for your next project, have questions about my work, or just want to connect, I’d love to hear from you!</p>
+        </div>
+    </div>
+
+    {% if entry.image is not empty %}
+        {% set image = entry.image.one() %}
+        {% set transform = {
+            height: '300',
+            width: '300',
+            format: 'webp'
+        } %}
+        <div class="container mx-auto max-w-3xl px-6 py-24 sm:py-32 lg:px-8">
+            <img src="{{ image.url(transform) }}" alt="{{ image.title }}">
+        </div>
+    {% endif %}
+
+    <div class="bg-teal-dark text-white">
+        <article class="mx-auto max-w-3xl  px-6 py-24 sm:py-32 lg:px-8">
+            <div class="text-2xl font-semibold tracking-tight mb-8">
+                {{ entry.richText }}
+            </div>
+            {% include '_partials/form' %}
+        </article>
+    </div>
+
+{% endblock %}

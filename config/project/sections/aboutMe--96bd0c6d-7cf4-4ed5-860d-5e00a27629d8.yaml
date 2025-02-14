@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: d4054e09-96b7-4b9f-a711-fa3acc2ed207 # About Me
+handle: aboutMe
+maxAuthors: 1
+name: 'About Me'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
+    enabledByDefault: true
+    hasUrls: true
+    template: about-me/_index.twig
+    uriFormat: about-me
+type: single

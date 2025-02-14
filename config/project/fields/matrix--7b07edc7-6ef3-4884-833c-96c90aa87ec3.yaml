@@ -1,0 +1,30 @@
+columnSuffix: null
+handle: matrix
+instructions: null
+name: Matrix
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - f97878e5-5b0c-4591-9251-1e45cbefc029 # Page
+    -
+      __assoc__:
+        -
+          - uid
+          - 7291e592-98b5-4cae-8b3b-18ea964e0e51 # Blog
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

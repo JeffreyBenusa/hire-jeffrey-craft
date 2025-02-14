@@ -1,0 +1,55 @@
+columnSuffix: null
+handle: dropdown
+instructions: null
+name: Dropdown
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Apple
+        -
+          - value
+          - apple
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Oranges
+        -
+          - value
+          - oranges
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bananas
+        -
+          - value
+          - bananas
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Passion Fruit'
+        -
+          - value
+          - passionFruit
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

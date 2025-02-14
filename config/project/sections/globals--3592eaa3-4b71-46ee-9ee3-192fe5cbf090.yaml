@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: fbc9eefe-5213-4b5f-b0d8-3b5673e14fe8 # Globals
+handle: globals
+maxAuthors: 1
+name: Globals
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

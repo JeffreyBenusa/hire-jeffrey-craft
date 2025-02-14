@@ -1,0 +1,23 @@
+name: hire-jeffrey-craft
+type: craftcms
+docroot: web
+php_version: "8.3"
+webserver_type: nginx-fpm
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+database:
+  type: mysql
+  version: "8.0"
+use_dns_when_possible: true
+composer_version: "2"
+nodejs_version: "22"  # Ensures Node.js 22 is configured for the project
+web_environment:
+  - NODE_ENV=development  # Optional: Defines the environment for Node.js
+  - VITE_DEV_SERVER=true  # Optional: Enables Vite development server settings
+corepack_enable: false
+web_extra_exposed_ports:
+  - name: craft-vite
+    container_port: 3000
+    http_port: 3001
+    https_port: 3000
