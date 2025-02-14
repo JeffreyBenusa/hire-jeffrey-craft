@@ -1,4 +1,21 @@
 {% extends '_layouts/base' %}
 
 {% block content %}
+    <div class="bg-teal-dark py-28">
+        <article class="text-white">
+            <header class="max-w-5xl mx-auto px-2 mb-12">
+                <h1 class="text-6xl font-bold">
+                    {{ entry.headline ?? entry.title }}
+                </h1>
+                {% if entry.subheadline %}
+                    <p class="mt-4 text-2xl italic">
+                        {{ entry.subheadline }}
+                    </p>
+                {% endif %}
+            </header>
+            <section class="max-w-5xl mx-auto px-2">
+                {{ entry.richText }}
+            </section>
+        </article>
+    </div>
 {% endblock %}
