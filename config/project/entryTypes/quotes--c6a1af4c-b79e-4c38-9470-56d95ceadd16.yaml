@@ -1,0 +1,69 @@
+color: null
+fieldLayouts:
+  5104ce5e-8c58-4238-a381-532fe3345eff:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-02-14T21:19:32+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: message
+            includeInCards: false
+            instructions: null
+            label: Message
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: af45a1b2-a243-431c-b018-43392c6a5b01
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-14T21:19:32+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: cite
+            includeInCards: false
+            instructions: null
+            label: Cite
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6b8f1b7-1031-49d7-a6d3-1b644defb93b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-14T21:19:32+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: quote
+            includeInCards: false
+            instructions: null
+            label: Quote
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a9e59f9-3193-4409-b840-76c15654a7c8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 84c0d733-329b-41f4-81de-ed05f1d0b498
+        userCondition: null
+handle: quotes
+hasTitleField: false
+icon: quotes
+name: Quotes
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{message}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

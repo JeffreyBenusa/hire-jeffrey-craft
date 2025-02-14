@@ -2,10 +2,10 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: f97878e5-5b0c-4591-9251-1e45cbefc029 # Page
-handle: aboutMe
+    uid: c6a1af4c-b79e-4c38-9470-56d95ceadd16 # Quotes
+handle: quotes
 maxAuthors: 1
-name: 'About Me'
+name: Quotes
 previewTargets:
   -
     __assoc__:
@@ -22,7 +22,7 @@ propagationMethod: all
 siteSettings:
   7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
     enabledByDefault: true
-    hasUrls: true
-    template: about-me/_index.twig
-    uriFormat: about-me
-type: single
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

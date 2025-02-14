@@ -1,0 +1,8 @@
+columnSuffix: null
+handle: structuredJson
+instructions: null
+name: 'Structured Json'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: jeffreybenusa\crafthirejeffreychat\fields\StructuredJson

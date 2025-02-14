@@ -1,0 +1,13 @@
+{% set quoteEntry = craft.entries().section('quotes').orderBy('RAND()').one() %}
+
+<section class="bg-teal-500">
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 text-gray-dark">
+        <h2 class="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+            {{ quoteEntry.message }}
+        </h2>
+        <blockquote class="mt-6 text-lg sm:text-xl font-medium">
+            <p class="mb-2">Inspired by {{ quoteEntry.cite }}:</p>
+            <p class="italic text-xl sm:text-2xl font-light">“{{ quoteEntry.quote }}”</p>
+        </blockquote>
+    </div>
+</section>

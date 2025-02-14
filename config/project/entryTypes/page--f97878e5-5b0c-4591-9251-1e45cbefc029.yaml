@@ -102,6 +102,28 @@ fieldLayouts:
         name: Content
         uid: 970df992-d7d5-453c-9442-c4ec69f968f9
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-02-14T21:43:00+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: description
+            includeInCards: false
+            instructions: null
+            label: Description
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 18a81dc7-d571-45f0-ba06-b613990a7d54
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: 19c29c62-c492-42e4-b9e3-3a9a4578556b
+        userCondition: null
 handle: page
 hasTitleField: true
 icon: memo

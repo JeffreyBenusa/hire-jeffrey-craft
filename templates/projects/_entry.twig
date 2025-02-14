@@ -4,91 +4,116 @@
 {% set otherProjects = craft.entries().section('projects').limit(3).id('not ' ~ entry.id).orderBy('RAND()').all() %}
 
 {% block content %}
-    <div class="py-28">
-        <article class="mx-auto max-w-7xl px-6 text-gray-dark">
-            <!-- Hero section -->
-            <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
-                <div>
-                    <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl shadow-xl p-2 inline-block">
-                        <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40" title="{{ clientLogo.title }}">
-                    </a>
-                </div>
-                <div class="flex flex-col justify-center" title="{{ entry.title }} Link - {{ entry.domain }}">
-                    <h1 class="text-pretty text-4xl font-semibold tracking-tight sm:text-7xl pr-6">{{ entry.title }}</h1>
-                    <p>
-                        <a class="text-accent-dark text-lg relative after:content-[''] after:block after:w-full after:h-0.5 after:bg-accent-dark after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 inline-block"
-                           href="{{ entry.domain }}">
-                            {{ entry.domain }}
+    {% cache %}
+        <div class="py-28">
+            <article class="mx-auto max-w-7xl px-6 text-gray-dark">
+                <!-- Hero section -->
+                <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
+                    <div>
+                        <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl shadow-xl p-2 inline-block">
+                            <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40"
+                                 title="{{ clientLogo.title }}">
                         </a>
-                    </p>
-                </div>
-            </header>
+                    </div>
+                    <div class="flex flex-col justify-center" title="{{ entry.title }} Link - {{ entry.domain }}">
+                        <h1 class="text-pretty text-4xl font-semibold tracking-tight sm:text-7xl pr-6">{{ entry.title }}</h1>
+                        <p>
+                            <a class="text-accent-dark text-lg relative after:content-[''] after:block after:w-full after:h-0.5 after:bg-accent-dark after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 inline-block"
+                               href="{{ entry.domain }}">
+                                {{ entry.domain }}
+                            </a>
+                        </p>
+                    </div>
+                </header>
 
-            <section class="text-pretty text-lg font-medium sm:text-xl/8 lg:max-w-none mb-12">
-                {{ entry.projectBackground }}
-            </section>
+                <section class="text-pretty text-lg font-medium sm:text-xl/8 lg:max-w-none mb-12">
+                    {{ entry.projectBackground }}
+                </section>
 
-            <section class="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-                {% set transform = {
-                    height: 1200,
-                    width: 1600,
-                    format: 'webp'
-                } %}
-                {% for screenshot in entry.previewImage.limit(3).all() %}
-                    {% if screenshot.domain is not empty %}<a href="{{ screenshot.domain }}"target="_blank">{% endif %}
-                    <figure>
-                        <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}" title="{{ screenshot.title }}"
-                             class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition">
-                        <figcaption class="text-center p-4 text-accent-dark/80 font-medium">{{ screenshot.title }}</figcaption>
-                    </figure>
-                    {% if screenshot.domain is not empty %}</a>{% endif %}
-                {% endfor %}
-            </section>
+                <section class="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                    {% set transform = {
+                        height: 1200,
+                        width: 1600,
+                        format: 'webp'
+                    } %}
+                    {% for screenshot in entry.previewImage.limit(3).all() %}
+                        {% if screenshot.domain is not empty %}<a href="{{ screenshot.domain }}"target="_blank">{% endif %}
+                        <figure>
+                            <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}"
+                                 title="{{ screenshot.title }}"
+                                 class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition">
+                            <figcaption
+                                    class="text-center p-4 text-accent-dark/80 font-medium">{{ screenshot.title }}</figcaption>
+                        </figure>
+                        {% if screenshot.domain is not empty %}</a>{% endif %}
+                    {% endfor %}
+                </section>
 
-            {% set hasSkills = entry.skillsAndTechnologies | length ? true : false %}
+                {% set hasSkills = entry.skillsAndTechnologies | length ? true : false %}
 
-            <!-- Content section -->
-            <div class="sm:mt-0 mb-24 lg:grid lg:grid-cols-3">
-                <div class="lg:col-span-2">
-                    <h2 class="text-pretty text-accent-dark text-3xl font-semibold tracking-tight sm:text-5xl mb-4">
-                        Challenges + Solutions</h2>
-                    <div class="flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-                        <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
-                            <p class="text-xl/8">{{ entry.richText }}</p>
+                <!-- Content section -->
+                <div class="sm:mt-0 mb-24 lg:grid lg:grid-cols-3">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-pretty text-accent-dark text-3xl font-semibold tracking-tight sm:text-5xl mb-4">
+                            Challenges + Solutions</h2>
+                        <div class="flex flex-col gap-x-8 gap-y-20 lg:flex-row">
+                            <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+                                <p class="text-xl/8">{{ entry.richText }}</p>
+                            </div>
                         </div>
                     </div>
+                    {% if hasSkills %}
+                        <div class="max-lg:mt-24 lg:col-span-1">
+                            <h2 class="text-balance text-accent-dark text-3xl font-semibold tracking-tight sm:text-5xl mb-4">
+                                Skills and Technologies</h2>
+                            <ul class="space-y-2 xl:w-80">
+                                {% for skill in entry.skillsAndTechnologies %}
+                                    <span class="inline-flex items-center gap-x-1.5 rounded-md bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-600">
+                                        <svg class="size-1.5 fill-gray-400" viewBox="0 0 6 6" aria-hidden="true">
+                                            <circle cx="3" cy="3" r="3"/>
+                                        </svg>
+                                        {{ skill.title }}
+                                    </span>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
-                {% if hasSkills %}
-                    <div class="max-lg:mt-24 lg:col-span-1">
-                        <h2 class="text-balance text-accent-dark text-3xl font-semibold tracking-tight sm:text-5xl mb-4">Skills and Technologies</h2>
-                        <ul class="space-y-2 xl:w-80">
-                            {% for skill in entry.skillsAndTechnologies %}
-                                <span class="inline-flex items-center gap-x-1.5 rounded-md bg-gray-100 px-1.5 py-0.5 text-xs font-medium text-gray-600">
-                                    <svg class="size-1.5 fill-gray-400" viewBox="0 0 6 6" aria-hidden="true">
-                                        <circle cx="3" cy="3" r="3"/>
-                                    </svg>
-                                    {{ skill.title }}
-                                </span>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </div>
-        </article>
+            </article>
 
-        <!-- Blog section -->
-        <div class=" mx-auto max-w-7xl px-6">
-            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                <h2 class="text-balance text-3xl text-accent-dark font-semibold tracking-tight sm:text-5xl">Other Projects</h2>
-                <p class="mt-2 text-lg/8 ">Diverse Expertise, Deep Toolkit, Scalable Solutions</p>
-            </div>
-            <div class="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 max-lg:max-w-lg max-lg:mx-auto">
-                {% for project in otherProjects %}
-                    {% include 'projects/_partials/card' with { params: {
-                        entry: project
-                    } } %}
-                {% endfor %}
+            <!-- Blog section -->
+            <div class=" mx-auto max-w-7xl px-6">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+                    <h2 class="text-balance text-3xl text-accent-dark font-semibold tracking-tight sm:text-5xl">Other
+                        Projects</h2>
+                    <p class="mt-2 text-lg/8 ">Diverse Expertise, Deep Toolkit, Scalable Solutions</p>
+                </div>
+                <div class="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 max-lg:max-w-lg max-lg:mx-auto">
+                    {% for project in otherProjects %}
+                        {% include 'projects/_partials/card' with { params: {
+                            entry: project
+                        } } %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
+    {% endcache %}
+
+    <section class="bg-gray-dark text-white px-6 py-12">
+        <div class="font-bold text-center p-8">
+            <h2 class="text-3xl tracking-tight ">How Can I Help?</h2>
+            <p>Ready to take the next step? Fill out the form below, and let’s connect.</p>
+        </div>
+        <div class="mx-auto max-w-3xl">
+            {% include '_partials/form'  with { params: {
+                submitClasses: "bg-accent text-white hover:bg-accent-dark"
+            } } %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block structuredData %}
+    <script type="application/ld+json">
+        {{ entry.structuredJson.json | raw }}
+    </script>
 {% endblock %}

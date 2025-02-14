@@ -12,6 +12,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Elements;
 use craft\services\Fields;
 use jeffreybenusa\crafthirejeffreychat\fields\CoverLetter;
+use jeffreybenusa\crafthirejeffreychat\fields\StructuredJson;
 use jeffreybenusa\crafthirejeffreychat\models\Settings;
 use yii\base\Event;
 
@@ -39,7 +40,7 @@ class Plugin extends BasePlugin
     {
         parent::init();
 
-//         $this->attachEventHandlers();
+         $this->attachEventHandlers();
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
@@ -65,31 +66,13 @@ class Plugin extends BasePlugin
     {
         // Register event handlers here ...
         // (see https://craftcms.com/docs/5.x/extend/events.html to get started)
-        // Hook into the entry save event
-        Event::on(
-            Elements::class,
-            Elements::EVENT_AFTER_SAVE_ELEMENT,
-            function (ElementEvent $event) {
-                $entry = $event->element;
-
-                // check if the Entry section is the "applications" section
-                if ($entry->section->handle !== 'applications') return;
-
-                // Check if it's an Entry and the field `jobUrlLink` has a URL
-                if ($entry instanceof Entry
-                    && !empty($entry->getFieldValue('jobListingUrl'))
-                    && empty($entry->getFieldValue('coverLetter'))) {
-                    $this->processJobPosting($entry);
-                }
-        });
-
         // Register Cover Letter field (encapsulate the processing)
         Event::on(Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
-                $event->types[] = CoverLetter::class;
+//                $event->types[] = CoverLetter::class;
+                $event->types[] = StructuredJson::class;
         });
-
     }
 
     private function processJobPosting(Entry $entry)

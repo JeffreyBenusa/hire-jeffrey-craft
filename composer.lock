@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4cac2f39192386ce41f8bd65313b3f6",
+    "content-hash": "6874336fb9be3278aef2c224190e8d62",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -4445,6 +4445,74 @@
             "time": "2024-04-15T17:55:45+00:00"
         },
         {
+            "name": "nystudio107/craft-emptycoalesce",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-emptycoalesce.git",
+                "reference": "a763fa66706444382f03cedcb6b5aa0ccb46430e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-emptycoalesce/zipball/a763fa66706444382f03cedcb6b5aa0ccb46430e",
+                "reference": "a763fa66706444382f03cedcb6b5aa0ccb46430e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Empty Coalesce",
+                "class": "nystudio107\\emptycoalesce\\EmptyCoalesce",
+                "handle": "empty-coalesce"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\emptycoalesce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Empty Coalesce adds the ??? operator to Twig that will return the first thing that is defined, not null, and not empty.",
+            "keywords": [
+                "coalesce",
+                "coalescing",
+                "craft-plugin",
+                "craft3",
+                "craftcms",
+                "empty",
+                "operator",
+                "twig"
+            ],
+            "support": {
+                "docs": "https://nystudio107.com/docs/empty-coalesce/",
+                "issues": "https://nystudio107.com/plugins/empty-coalesce/support",
+                "source": "https://github.com/nystudio107/craft-emptycoalesce"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-13T19:01:43+00:00"
+        },
+        {
             "name": "nystudio107/craft-plugin-vite",
             "version": "5.0.2",
             "source": {
@@ -6112,6 +6180,61 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
             "time": "2021-10-29T13:26:27+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-sendgrid",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-sendgrid.git",
+                "reference": "1af1f4b6e01524d5d45ffa69e060adc8ebf4c65b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sendgrid/zipball/1af1f4b6e01524d5d45ffa69e060adc8ebf4c65b",
+                "reference": "1af1f4b6e01524d5d45ffa69e060adc8ebf4c65b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0",
+                "php": "^8.2",
+                "symfony/sendgrid-mailer": "^6.0"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "SendGrid",
+                "class": "putyourlightson\\sendgrid\\Sendgrid",
+                "handle": "sendgrid",
+                "developer": "PutYourLightsOn",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-sendgrid/develop/CHANGELOG.md",
+                "developerUrl": "https://putyourlightson.com/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\sendgrid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "SendGrid mailer adapter for Craft CMS.",
+            "homepage": "https://github.com/putyourlightson/craft-sendgrid",
+            "keywords": [
+                "email",
+                "mailer",
+                "sendgrid"
+            ],
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/sendgrid",
+                "issues": "https://github.com/putyourlightson/craft-sendgrid/issues",
+                "source": "https://github.com/putyourlightson/craft-sendgrid"
+            },
+            "time": "2024-04-08T13:51:44+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8933,6 +9056,76 @@
                 }
             ],
             "time": "2025-01-27T11:08:17+00:00"
+        },
+        {
+            "name": "symfony/sendgrid-mailer",
+            "version": "v6.4.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/sendgrid-mailer.git",
+                "reference": "18dca2e8fc8e449e2dacdd40a9bbd544b3a10e90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/sendgrid-mailer/zipball/18dca2e8fc8e449e2dacdd40a9bbd544b3a10e90",
+                "reference": "18dca2e8fc8e449e2dacdd40a9bbd544b3a10e90",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/mailer": "^5.4.21|^6.2.7|^7.0"
+            },
+            "conflict": {
+                "symfony/http-foundation": "<6.2",
+                "symfony/mime": "<6.2"
+            },
+            "require-dev": {
+                "symfony/http-client": "^5.4|^6.0|^7.0",
+                "symfony/webhook": "^6.3|^7.0"
+            },
+            "type": "symfony-mailer-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Sendgrid Mailer Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/sendgrid-mailer/tree/v6.4.18"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-07T11:11:15+00:00"
         },
         {
             "name": "symfony/serializer",

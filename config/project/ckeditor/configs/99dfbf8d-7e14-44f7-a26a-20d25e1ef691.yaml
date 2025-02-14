@@ -7,6 +7,8 @@ headingLevels:
   - 6
 name: Simple
 toolbar:
+  - sourceEditing
+  - '|'
   - heading
   - '|'
   - bold
@@ -15,3 +17,5 @@ toolbar:
   - '|'
   - bulletedList
   - numberedList
+  - '|'
+  - insertImage

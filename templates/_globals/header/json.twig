@@ -1,0 +1,28 @@
+{% block structuredData %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "{{ entry.title }}",
+                "url": "{{ entry.url }}",
+                "description": "{{ entry.description ??? globals.description }}",
+                "author": {
+                    "@type": "Person",
+                    "name": "Jeffrey Benusa",
+                    "url": "{{ siteUrl }}"
+                },
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Jeffrey Benusa",
+                    "url": "{{ siteUrl }}"
+                },
+                "datePublished": "2024-02-15",
+                "dateModified": "2024-02-15",
+                "inLanguage": "en",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "{{ entry.url }}"
+                }
+            }
+    </script>
+{% endblock %}

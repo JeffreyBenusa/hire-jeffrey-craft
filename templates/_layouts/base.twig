@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="utf-8"/>
     <title>{{ entry.title ~ " | HireJeffrey.com" | default("Hire Jeffrey") }} </title>
-    <meta name="description" content="This is my page description" />
+    <meta name="description" content="{{ entry.description ??? globals.description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="referrer" content="strict-origin-when-cross-origin"/>
 
@@ -63,14 +63,16 @@
     <link href="https://fonts.bunny.net/css?family=roboto:100,500,700,900" rel="stylesheet" />
 
     {{ craft.vite.script("src/js/app.js", false) }}
+    {% include "_globals/header/json" %}
 </head>
-<body class="">
+<body>
     <a href="#main-content" class="absolute left-0 top-0 bg-blue-500 text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition">Skip to main content</a>
     {% include '_globals/header' %}
-    <main id="main-content" class="min-h-screen font-sans">
+    <main id="main-content" class="font-sans">
         {% block content %}
         {% endblock %}
     </main>
+    {% include '_globals/quote' %}
     {% include '_globals/footer' %}
     {% include '_globals/cookieBanner' %}
 </body>

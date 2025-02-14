@@ -5,7 +5,7 @@ name: 'Rich Text'
 searchable: false
 settings:
   availableTransforms: ''
-  availableVolumes: ''
+  availableVolumes: '*'
   ckeConfig: 99dfbf8d-7e14-44f7-a26a-20d25e1ef691 # Simple
   createButtonLabel: null
   defaultTransform: null

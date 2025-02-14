@@ -1,21 +1,35 @@
 {% extends '_layouts/base' %}
 
 {% block content %}
-    <div class="bg-teal-dark py-28">
-        <article class="text-white">
-            <header class="max-w-5xl mx-auto px-2 mb-12">
-                <h1 class="text-6xl font-bold">
-                    {{ entry.headline ?? entry.title }}
-                </h1>
-                {% if entry.subheadline %}
-                    <p class="mt-4 text-2xl italic">
-                        {{ entry.subheadline }}
-                    </p>
-                {% endif %}
-            </header>
-            <section class="max-w-5xl mx-auto px-2">
-                {{ entry.richText }}
-            </section>
-        </article>
-    </div>
+    {% cache %}
+        <div class="bg-teal-dark py-28">
+            <article class="text-white">
+                <header class="max-w-5xl mx-auto px-2 mb-12">
+                    <h1 class="text-6xl font-bold">
+                        {{ entry.headline ?? entry.title }}
+                    </h1>
+                    {% if entry.subheadline %}
+                        <p class="mt-4 text-2xl italic">
+                            {{ entry.subheadline }}
+                        </p>
+                    {% endif %}
+                </header>
+                <section class="max-w-5xl mx-auto px-2">
+                    {{ entry.richText }}
+                </section>
+            </article>
+        </div>
+    {% endcache %}
+
+    <section class="bg-gray-dark text-white px-6 py-12">
+        <div class="font-bold text-center p-8">
+            <h2 class="text-3xl tracking-tight ">How Can I Help?</h2>
+            <p>Ready to take the next step? Fill out the form below, and let’s connect.</p>
+        </div>
+        <div class="mx-auto max-w-3xl">
+            {% include '_partials/form'  with { params: {
+                submitClasses: "bg-accent text-white hover:bg-accent-dark"
+            } } %}
+        </div>
+    </section>
 {% endblock %}
