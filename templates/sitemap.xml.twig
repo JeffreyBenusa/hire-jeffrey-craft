@@ -1,0 +1,24 @@
+{% header "Content-Type: application/xml" %}<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {# Homepage #}
+    <url>
+        <loc>{{ siteUrl }}</loc>
+        <priority>1.0</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    {# Query all entries where seoIndex is true #}
+    {% set entries = craft.entries()
+        .section(['aboutMe', 'projectsArchive','projects','contact','pages'])
+        .all() %}
+
+    {# Loop through and generate URLs #}
+    {% for entry in entries %}
+        <url>
+            <loc>{{ entry.url }}</loc>
+            <lastmod>{{ entry.dateUpdated|date("Y-m-d") }}</lastmod>
+            <priority>0.8</priority>
+            <changefreq>monthly</changefreq>
+        </url>
+    {% endfor %}
+</urlset>

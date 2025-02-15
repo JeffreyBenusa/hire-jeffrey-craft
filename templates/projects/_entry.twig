@@ -42,8 +42,9 @@
                             <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}"
                                  title="{{ screenshot.title }}"
                                  class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition">
-                            <figcaption
-                                    class="text-center p-4 text-accent-dark/80 font-medium">{{ screenshot.title }}</figcaption>
+                            <figcaption class="text-center p-4 text-accent-dark font-medium">
+                                {{ screenshot.title }}
+                            </figcaption>
                         </figure>
                         {% if screenshot.domain is not empty %}</a>{% endif %}
                     {% endfor %}

@@ -36,38 +36,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-02-06T18:10:07+00:00'
-            elementCondition: null
-            fieldUid: cc4f624e-61f6-4994-928d-51df13c898c4 # Text Field
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: fa0c45f4-c4f1-4ce7-8262-f15710395be5
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-02-06T18:27:14+00:00'
-            elementCondition: null
-            fieldUid: 7b07edc7-6ef3-4884-833c-96c90aa87ec3 # Matrix
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 784924e9-17b1-41a2-89d2-1573b7ba94d8
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2025-02-07T20:32:41+00:00'
             elementCondition: null
             fieldUid: f5f813f1-a303-421c-bb18-6dfaf36fa7b5 # Image

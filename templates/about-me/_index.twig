@@ -18,4 +18,16 @@
             </section>
         </article>
     </div>
+
+    <section class="bg-gray-dark text-white px-6 py-12">
+        <div class="font-bold text-center p-8">
+            <h2 class="text-3xl tracking-tight ">How Can I Help?</h2>
+            <p>Ready to take the next step? Fill out the form below, and let’s connect.</p>
+        </div>
+        <div class="mx-auto max-w-3xl">
+            {% include '_partials/form'  with { params: {
+                submitClasses: "bg-accent text-white hover:bg-accent-dark"
+            } } %}
+        </div>
+    </section>
 {% endblock %}
