@@ -16,7 +16,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 7291e592-98b5-4cae-8b3b-18ea964e0e51 # Blog
+          - 8a8463fa-1a16-4043-b029-a2119901c8ad # Banner
   includeTableView: false
   maxEntries: null
   minEntries: null

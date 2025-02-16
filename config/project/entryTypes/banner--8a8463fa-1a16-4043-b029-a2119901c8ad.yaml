@@ -1,6 +1,6 @@
 color: null
 fieldLayouts:
-  c5dec896-8476-4ba0-8062-c50fa4321660:
+  f357c0bd-f027-4eaa-868e-256b14c85542:
     tabs:
       -
         elementCondition: null
@@ -10,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-02-06T14:09:47+00:00'
+            dateAdded: '2025-02-16T00:08:19+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,33 +31,33 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 7955e7d1-6cd4-427b-b182-52ed67a8b638
+            uid: e078f39b-d460-49c9-8cfc-161438833ce5
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-02-06T18:25:55+00:00'
+            dateAdded: '2025-02-16T00:10:27+00:00'
             elementCondition: null
-            fieldUid: 8f9f9e63-916f-4e0b-a13f-237eaedf6d60 # Dropdown
-            handle: null
+            fieldUid: cc4f624e-61f6-4994-928d-51df13c898c4 # Text Field
+            handle: description
             includeInCards: false
             instructions: null
-            label: null
+            label: Description
             providesThumbs: false
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 27a82eee-9f74-4dc9-8355-c1b5347cf121
+            uid: 22ac9ebd-bcf9-4dd3-847f-88f95be7bc83
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 670eff7d-b097-4aaa-a4f7-7be272675cfa
+        uid: f0512c28-186b-493e-984f-1fbd0e9de52b
         userCondition: null
-handle: aboutMe
+handle: banner
 hasTitleField: true
-icon: person
-name: 'About Me'
+icon: null
+name: Banner
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

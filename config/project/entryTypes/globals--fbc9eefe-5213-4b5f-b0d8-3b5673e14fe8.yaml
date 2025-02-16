@@ -68,18 +68,18 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-02-14T22:30:19+00:00'
+            dateAdded: '2025-02-16T00:40:17+00:00'
             elementCondition: null
-            fieldUid: 1dff345e-edd5-4f00-94d7-b6190c109b2a # Asset
-            handle: image
+            fieldUid: f5f813f1-a303-421c-bb18-6dfaf36fa7b5 # Image
+            handle: null
             includeInCards: false
             instructions: null
-            label: Image
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: ce355acc-74f1-4419-8a22-02fc074eeb77
+            uid: 0da7b1b8-11b6-4b8e-9421-293db4021d88
             userCondition: null
             warning: null
             width: 100

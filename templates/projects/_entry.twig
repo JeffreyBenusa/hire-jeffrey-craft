@@ -10,16 +10,16 @@
                 <!-- Hero section -->
                 <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
                     <div>
-                        <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl shadow-xl p-2 inline-block">
+                        <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl p-2 inline-block">
                             <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40"
-                                 title="{{ clientLogo.title }}">
+                                 title="{{ entry.title }} Website">
                         </a>
                     </div>
-                    <div class="flex flex-col justify-center" title="{{ entry.title }} Link - {{ entry.domain }}">
+                    <div class="flex flex-col justify-center">
                         <h1 class="text-pretty text-4xl font-semibold tracking-tight sm:text-7xl pr-6">{{ entry.title }}</h1>
                         <p>
                             <a class="text-accent-dark text-lg relative after:content-[''] after:block after:w-full after:h-0.5 after:bg-accent-dark after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 inline-block"
-                               href="{{ entry.domain }}">
+                               href="{{ entry.domain }}" title="{{ entry.title }} Website">
                                 {{ entry.domain }}
                             </a>
                         </p>

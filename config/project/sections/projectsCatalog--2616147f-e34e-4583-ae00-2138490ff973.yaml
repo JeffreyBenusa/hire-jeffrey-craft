@@ -3,9 +3,9 @@ enableVersioning: true
 entryTypes:
   -
     uid: f97878e5-5b0c-4591-9251-1e45cbefc029 # Page
-handle: projectsArchive
+handle: projectsCatalog
 maxAuthors: 1
-name: 'Projects Archive'
+name: 'Projects Catalog'
 previewTargets:
   -
     __assoc__:

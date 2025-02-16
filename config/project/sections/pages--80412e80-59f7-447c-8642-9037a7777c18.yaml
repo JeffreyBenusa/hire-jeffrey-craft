@@ -23,6 +23,6 @@ siteSettings:
   7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com
     enabledByDefault: true
     hasUrls: true
-    template: page/_entry.twig
+    template: pages/_entry.twig
     uriFormat: '{slug}'
 type: channel
