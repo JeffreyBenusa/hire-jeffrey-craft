@@ -20,7 +20,8 @@
                 <section class="mt-8 lg:mt-16 grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-2 max-lg:max-w-lg max-lg:mx-auto">
                     {% for project in entries %}
                         {% include 'projects/_partials/card' with { params: {
-                            entry: project
+                            entry: project,
+                            loading: loop.index <= 2 ? 'eager' : 'lazy'
                         }} %}
                     {% endfor %}
                 </section>

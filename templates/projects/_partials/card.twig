@@ -1,5 +1,6 @@
 {% set params = {
-    entry: false
+    entry: false,
+    loading: 'eager'
 }|merge(params|default({})) %}
 
 {% set project = params.entry %}
@@ -9,8 +10,8 @@
     <article class="flex flex-col items-center lg:items-start justify-between bg-white rounded-lg shadow hover:shadow-2xl" title="{{ project.title }}">
         <a href="{{ project.url }}" class="block text-gray-dark group-hover:text-gray-300 max-w-lg transition">
             <div class="relative w-full rounded-t-lg overflow-hidden">
-                <img src="{{ previewImage.url({width: 1200,format: 'webp'}) }}" alt="{{ previewImage.alt }}"
-                     class="aspect-video w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" loading="lazy">
+                <img src="{{ previewImage.url({width: 800,format: 'webp'}) }}" alt="{{ previewImage.alt }}" width="500" height="325"
+                     class="aspect-video w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" loading="{{ params.loading }}">
             </div>
             <div class="group relative px-2 pt-4 pb-6">
                 <h2 class="mt-3 h-12 text-lg/6 font-semibold line-clamp-2">
@@ -21,12 +22,12 @@
                 </p>
                 {% if project.skillsAndTechnologies | length %}
                     {% set skills = project.skillsAndTechnologies.limit(5) %}
-                    <div class="mt-4">
+                    <ul class="mt-4">
                         {% for skill in skills %}
                             {% include 'projects/_partials/pill' with { params: { title: skill.title }} %}
                         {% endfor %}
                         {% include 'projects/_partials/pill' with { params: { title: "More.." }} %}
-                    </div>
+                    </ul>
                 {% endif %}
             </div>
         </a>

@@ -9,11 +9,9 @@
             <article class="mx-auto max-w-7xl px-6 text-gray-dark">
                 <!-- Hero section -->
                 <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
-                    <div>
-                        <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl p-2 inline-block">
-                            <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40"
-                                 title="{{ entry.title }} Website" loading="eager">
-                        </a>
+                    <div class="bg-white rounded-xl p-2 inline-block">
+                        <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40" height="96"
+                             title="{{ entry.title }} Website" loading="eager">
                     </div>
                     <div class="flex flex-col justify-center">
                         <h1 class="text-pretty text-4xl font-semibold tracking-tight sm:text-7xl pr-6">{{ entry.title }}</h1>
@@ -32,15 +30,15 @@
 
                 <section class="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {% set transform = {
-                        height: 1200,
-                        width: 1600,
+                        height: 960,
+                        width: 640,
                         format: 'webp'
                     } %}
                     {% for screenshot in entry.previewImage.limit(3).all() %}
                         {% if screenshot.domain is not empty %}<a href="{{ screenshot.domain }}"target="_blank">{% endif %}
                         <figure>
                             <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}" title="{{ screenshot.title }}" loading="eager"
-                                 class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition">
+                                 class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition" width="320" height="480">
                             <figcaption class="text-center p-4 text-accent-dark font-medium">
                                 {{ screenshot.title }}
                             </figcaption>
@@ -86,7 +84,8 @@
                 <div class="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 mt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 max-lg:max-w-lg max-lg:mx-auto">
                     {% for project in otherProjects %}
                         {% include 'projects/_partials/card' with { params: {
-                            entry: project
+                            entry: project,
+                            loading: 'lazy'
                         } } %}
                     {% endfor %}
                 </div>
