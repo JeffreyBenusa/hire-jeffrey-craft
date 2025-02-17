@@ -12,7 +12,7 @@
                     <div>
                         <a href="{{ entry.domain }}" target="_blank" class="bg-white rounded-xl p-2 inline-block">
                             <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40"
-                                 title="{{ entry.title }} Website">
+                                 title="{{ entry.title }} Website" loading="eager">
                         </a>
                     </div>
                     <div class="flex flex-col justify-center">
@@ -39,8 +39,7 @@
                     {% for screenshot in entry.previewImage.limit(3).all() %}
                         {% if screenshot.domain is not empty %}<a href="{{ screenshot.domain }}"target="_blank">{% endif %}
                         <figure>
-                            <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}"
-                                 title="{{ screenshot.title }}"
+                            <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}" title="{{ screenshot.title }}" loading="eager"
                                  class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition">
                             <figcaption class="text-center p-4 text-accent-dark font-medium">
                                 {{ screenshot.title }}

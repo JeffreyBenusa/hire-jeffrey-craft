@@ -36,6 +36,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-02-16T20:01:54+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dc1812b7-2c22-472e-8421-8b3d54db61dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-02-16T00:34:21+00:00'
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline

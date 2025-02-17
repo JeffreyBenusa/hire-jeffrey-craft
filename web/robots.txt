@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cp/
+Disallow: /login/
+Allow: /
+
+# Allow all search engines to index your main site content
+Sitemap: https://hirejeffrey.com/sitemap.xml

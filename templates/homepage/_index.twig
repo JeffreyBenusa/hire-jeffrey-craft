@@ -6,7 +6,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5">
                     <div class="col-span-2">
-                        <h1 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ entry.title }}</h1>
+                        <h1 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ entry.headline }}</h1>
                         <h2 class="mt-2 text-base/7 font-semibold text-brand italic">{{ entry.tagline }}</h2>
                         <p class="mt-6 text-base/7 text-gray-600">
                             {{ entry.mainCta }}
@@ -43,7 +43,7 @@
                             } %}
                             {% set bannerImage = entry.bannerImage ? entry.bannerImage.one : false  %}
                             {% set backupImageUrl = "https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80" %}
-                            <img class="relative aspect-[10/6] w-full rounded-3xl object-cover shadow-2xl aspect-square" src="{{ bannerImage ? bannerImage.url(transform) : backupImageUrl}} " alt="">
+                            <img class="relative aspect-[10/6] w-full rounded-3xl object-cover shadow-2xl aspect-square" src="{{ bannerImage ? bannerImage.url(transform) : backupImageUrl}} " alt="Photo of Banner image" loading="lazy">
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@
                 format: 'webp'
             } %}
             <div class="container mx-auto max-w-3xl  px-6 py-24 sm:py-32 lg:px-8">
-                <img src="{{ image.url(transform) }}" alt="{{ image.title }}">
+                <img src="{{ image.url(transform) }}" alt="{{ image.title }}" loading="lazy">
             </div>
         {% endif %}
     {% endcache %}

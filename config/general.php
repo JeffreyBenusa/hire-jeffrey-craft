@@ -18,6 +18,8 @@ return GeneralConfig::create()
     ->omitScriptNameInUrls()
     // Preload Single entries as Twig variables
     ->preloadSingles()
+    // Update Settings
+    ->allowAdminChanges(App::env('CRAFT_ALLOW_ADMIN_CHANGES') ?: false)
     // Prevent user enumeration attacks
     ->preventUserEnumeration()
     // Set the @webroot alias so the clear-caches command knows where to find CP resources

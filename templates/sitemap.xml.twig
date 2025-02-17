@@ -7,9 +7,9 @@
         <changefreq>weekly</changefreq>
     </url>
 
-    {# Query all entries where seoIndex is true #}
     {% set entries = craft.entries()
-        .section(['aboutMe', 'projectsCatalog','projects','contact','pages'])
+        .section(['not', 'homepage'])
+        .uri(':notempty:')
         .all() %}
 
     {# Loop through and generate URLs #}
