@@ -9,7 +9,7 @@
     {# Set default values #}
     {% set seoTitle = entry.title ~ " | HireJeffrey.com" | default("Hire Jeffrey | Engineering Leadership & Web Development") %}
     {% set seoDescription = entry.description ??? globals.description %}
-    {% set seoUrl = entry.url ??? siteUrl %}
+    {% set seoUrl = entry.url ??? craft.app.request.url | split('?') | first %}
     {% set seoImage = entry.image.one() ??? globals.image.one() %}
 
     {# Standard Meta Tags #}
@@ -25,6 +25,7 @@
     <meta property="og:image" content="{{ seoImage.getUrl('openGraph') }}">
     <meta property="og:image:alt" content="Jeffrey Benusa - Engineering Leadership & Web Development">
     <meta property="og:type" content="website">
+    <meta property="og:author" content="Jeffrey Benusa">
     <meta property="og:site_name" content="Hire Jeffrey">
     <meta property="og:locale" content="en_US">
 
