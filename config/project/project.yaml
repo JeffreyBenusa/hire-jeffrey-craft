@@ -1,0 +1,548 @@
+dateModified: 1739895278
+elementSources:
+  craft\elements\Asset:
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'volume:45e337c3-c8db-4f41-8c36-3fffd0b1895b' # AWS
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - alt
+        - 'field:69a0b0da-4944-4393-b673-5c6ccd3b2480' # Domain
+        - link
+      type: native
+    -
+      key: temp
+      type: native
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: singles
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:2060e520-fe90-489f-b32f-726170cb427d' # Applications
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+        - 'fieldInstance:b6ade623-8e76-4758-a4bd-579c1ea77e01'
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:9489bfa8-b063-4df9-b031-cc14d1021a49' # Projects
+      tableAttributes:
+        - status
+        - dateUpdated
+        - 'field:f54dead2-8c9d-44f7-8eec-cdf5f89fd0f3' # Skills and Technologies
+        - uri
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:80412e80-59f7-447c-8642-9037a7777c18' # Pages
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:67f62c33-7727-4bfc-b635-19c0014fe3ea' # Quotes
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      key: 'section:afd412bf-24db-4e78-8dc2-f3fcfaf17cdd' # Blog
+      type: native
+email:
+  fromEmail: jeff.benusa@gmail.com
+  fromName: hirejeffrey.com
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  s3:
+    hasUrls: true
+    name: S3
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: hirejeffrey-bucket
+      bucketSelectionMode: choose
+      cfDistributionId: $CLOUDFRONT_DISTRIBUTION_ID
+      cfPrefix: $CLOUDFRONT_PATH_PREFIX
+      expires: '1 months'
+      keyId: $AWS_ACCESS_KEY_ID
+      makeUploadsPublic: false
+      region: us-east-2
+      secret: $AWS_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: ''
+    type: craft\awss3\Fs
+    url: $CLOUDFRONT_URL
+meta:
+  __names__:
+    0afbd752-37be-43e9-a2e8-6e8b04f7b678: Contact # Contact
+    1d6b8942-f419-41e2-820c-be6e49955f8f: Homepage # Homepage
+    1dff345e-edd5-4f00-94d7-b6190c109b2a: Asset # Asset
+    6d83f877-39da-4cba-b7ec-c7a9d9d3a403: 'Skills And Technology' # Skills And Technology
+    7b07edc7-6ef3-4884-833c-96c90aa87ec3: Matrix # Matrix
+    7b44d990-5db1-4fac-be77-aee6b2337323: hirejeffrey.com # hirejeffrey.com
+    7e6c4bad-2006-4019-96e6-249dcec6cd7e: Application # Application
+    8a8463fa-1a16-4043-b029-a2119901c8ad: Banner # Banner
+    8eb826e2-71f2-4e31-a635-bbbec0160110: Headline # Headline
+    8eca8826-b225-4670-9412-52fbd69aab7b: 'Public Schema' # Public Schema
+    8f9f9e63-916f-4e0b-a13f-237eaedf6d60: Dropdown # Dropdown
+    9a4f0ca1-ced8-4a29-8f8a-dba746be2d4f: Resume # Resume
+    45e337c3-c8db-4f41-8c36-3fffd0b1895b: AWS # AWS
+    49ef9536-2437-43df-a119-284cf3a0ca11: Sites # Sites
+    057dd961-93b0-4b3c-8bdc-29f1a26a6c38: 'Rich Text' # Rich Text
+    67f62c33-7727-4bfc-b635-19c0014fe3ea: Quotes # Quotes
+    69a0b0da-4944-4393-b673-5c6ccd3b2480: Domain # Domain
+    96bd0c6d-7cf4-4ed5-860d-5e00a27629d8: 'About Me' # About Me
+    99dfbf8d-7e14-44f7-a26a-20d25e1ef691: Simple # Simple
+    664fa1cb-db74-4a94-910a-ba3758c477d5: 'Structured Json' # Structured Json
+    2060e520-fe90-489f-b32f-726170cb427d: Applications # Applications
+    3592eaa3-4b71-46ee-9ee3-192fe5cbf090: Globals # Globals
+    9489bfa8-b063-4df9-b031-cc14d1021a49: Projects # Projects
+    40685d18-1de1-4e3a-9d7a-f4545dbb88fb: hirejeffrey.com # hirejeffrey.com
+    78948a7b-e2a4-4a90-8582-95357d40f074: Subheadline # Subheadline
+    80412e80-59f7-447c-8642-9037a7777c18: Pages # Pages
+    2616147f-e34e-4583-ae00-2138490ff973: 'Projects Catalog' # Projects Catalog
+    ac3954a9-9b19-4a6b-8e36-b6889c19cdc1: Twitter # Twitter
+    ae8b0a48-f402-4e29-b4bf-c640bc1ff7f7: 'Open Graph' # Open Graph
+    afd412bf-24db-4e78-8dc2-f3fcfaf17cdd: Blog # Blog
+    c6a1af4c-b79e-4c38-9470-56d95ceadd16: Quotes # Quotes
+    cc4f624e-61f6-4994-928d-51df13c898c4: 'Text Field' # Text Field
+    d4dbe4a5-8a43-46f0-b8cb-a4bfd67b4322: Skills # Skills
+    d63a08f2-2860-442f-9d89-04bec59ba947: 'Blog Catalog' # Blog Catalog
+    e9b45f92-5487-4077-af4b-c894a6b37308: Homepage # Homepage
+    f5f813f1-a303-421c-bb18-6dfaf36fa7b5: Image # Image
+    f23dd440-00b7-4eba-82b4-705eecd516ff: CoverLetterField # CoverLetterField
+    f54dead2-8c9d-44f7-8eec-cdf5f89fd0f3: 'Skills and Technologies' # Skills and Technologies
+    f97878e5-5b0c-4591-9251-1e45cbefc029: Page # Page
+    fbc9eefe-5213-4b5f-b0d8-3b5673e14fe8: Globals # Globals
+plugins:
+  _hire-jeffrey-chat:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      apiKey: $OPENAI_API_KEY
+      formatting:
+        -
+          - 'Do not return with any placeholders'
+        -
+          - 'Do not include a signature. Only return the body of the cover letter message.'
+      persona: "You are an expert career assistant writing cover letters for Jeffrey Benusa, a senior full-stack web developer with over eight years of experience.      Jeffrey specializes in PHP, JavaScript, and user-focused web development. He has led projects optimizing user journeys in e-commerce and content-driven platforms.     His expertise includes Laravel, Craft CMS, WordPress, MySQL, and API-driven architectures.         \r\nKey strengths:     \r\n- Strategic problem solver who builds scalable, maintainable solutions.     \r\n- Strong collaborator, working with product managers, designers, and stakeholders.    \r\n- Experienced in Agile and MVP-driven development.     \r\n- Passionate about performance optimization, ADA compliance, and user experience.      \r\n\r\nJeffrey has successfully led projects like:    \r\n- LeadFlex: Migrated logic into a plugin for efficiency across 70+ sites.     \r\n- MortonBuildings.com: Built a Tesla-inspired website using a component library.     \r\n- TrophyPA.com: Optimized MLS data integration by moving logic client-side with Vue.      \r\n\r\nPersonal Interests:     \r\n- Passionate about gardening, cooking, and fitness.     \r\n- Values sustainability, craftsmanship, and high-performance digital experiences.     \r\n- Generate a compelling, professional cover letter for Jeffrey tailored to the following job. \r\n\r\nOnly respond with the body of the cover letter."
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  empty-coalesce:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.1.1
+  freeform:
+    edition: express
+    enabled: true
+    schemaVersion: 5.4.2
+    settings:
+      alertNotificationRecipients: null
+      allowDashesInFieldHandles: false
+      allowFileTemplateEdit: '1'
+      autoScroll: true
+      autoScrollToErrors: true
+      badgeType: all
+      blockedEmails: null
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: null
+      blockedKeywords: null
+      blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      defaultFromEmail: '{{ craft.app.projectConfig.get(''email.fromEmail'') }}'
+      defaultFromName: '{{ craft.app.projectConfig.get(''email.fromName'') }}'
+      defaultView: forms
+      defaults:
+        __assoc__:
+          -
+            - previewHtml
+            - true
+          -
+            - twigInHtml
+            - true
+          -
+            - twigIsolation
+            - true
+          -
+            - includeSampleTemplates
+            - true
+          -
+            - notifications
+            -
+              __assoc__:
+                -
+                  - admin
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - conditional
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - userSelect
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - emailField
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+          -
+            - settings
+            -
+              __assoc__:
+                -
+                  - general
+                  -
+                    __assoc__:
+                      -
+                        - formType
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - submissionTitle
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - '{{ dateCreated|date("Y-m-d H:i:s") }}'
+                      -
+                        - formattingTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - basic-light/index.twig
+                -
+                  - dataStorage
+                  -
+                    __assoc__:
+                      -
+                        - storeData
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - defaultStatus
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 2
+                      -
+                        - collectIp
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                -
+                  - processing
+                  -
+                    __assoc__:
+                      -
+                        - ajax
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showIndicator
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - processingText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - Processing...
+                -
+                  - successAndErrors
+                  -
+                    __assoc__:
+                      -
+                        - successBehavior
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - reload
+                      -
+                        - returnUrl
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Form has been submitted successfully!'
+                      -
+                        - errorMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Sorry, there was an error submitting the form. Please try again.'
+                -
+                  - limits
+                  -
+                    __assoc__:
+                      -
+                        - duplicateCheck
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - no_limit
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDefault: database
+      emailTemplateDirectory: ''
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: false
+      exportLabels: false
+      fillWithGet: false
+      footerScripts: false
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: true
+      formSubmitExpiration: null
+      formTemplateDirectory: _freeform/form
+      formattingTemplate: basic-light/index.twig
+      loggingLevel: error
+      minimumSubmitTime: null
+      pluginName: null
+      purgableSpamAgeInDays: null
+      purgableSubmissionAgeInDays: null
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      purgeAssets: true
+      queuePriority: null
+      rememberPageSubmitOrder: true
+      removeNewlines: false
+      renderFormHtmlInCpViews: true
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: footer
+      scriptInsertType: files
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: false
+      showErrorsForBlockedKeywords: false
+      sitesEnabled: false
+      spamFolderEnabled: true
+      spamProtectionBehavior: simulate_success
+      submissionThrottlingCount: null
+      submissionThrottlingTimeFrame: null
+      successTemplateDirectory: ''
+      updateSearchIndexes: true
+      useQueueForEmailNotifications: false
+      useQueueForIntegrations: false
+  sendgrid:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: hirejeffrey.com
+  schemaVersion: 5.6.0.2
+  timeZone: America/Los_Angeles

@@ -31,9 +31,6 @@ web/cpresources/*
 # Dist files
 web/dist/*
 
-# Ignore Craft CMS project config files (only if you manage config in another way)
-project.yaml
-
 # Ignore system logs
 /storage/logs/
 logs/
