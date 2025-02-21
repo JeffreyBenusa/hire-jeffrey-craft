@@ -7,7 +7,6 @@
     "craftcms/cms": "^5.0.0",
     "craftcms/element-api": "^4.2.0",
     "craftcms/feed-me": "^6.7.0",
-    "jeffrey-benusa/craft-hire-jeffrey-chat": "dev-main",
     "nystudio107/craft-cookies": "^5.0.0",
     "nystudio107/craft-emptycoalesce": "^5.0.0",
     "nystudio107/craft-vite": "^5.0.1",
@@ -16,7 +15,7 @@
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
-    "craftcms/generator": "^2.0.0",
+    "craftcms/generator": "^2.1",
     "yiisoft/yii2-shell": "^2.0.3"
   },
   "config": {
@@ -36,10 +35,9 @@
       "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
     ]
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "plugins/hire-jeffrey-chat"
+  "autoload": {
+    "psr-4": {
+      "modules\\hirejeffrey\\": "modules/hire-jeffrey/"
     }
-  ]
+  }
 }

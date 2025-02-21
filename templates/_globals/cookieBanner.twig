@@ -1,35 +1,19 @@
-<div id="cookieBanner" class="bg-white fixed bottom-0 left-0 w-full shadow-md z-10">
-    <div class="mx-auto max-w-7xl px-6 py-6 sm:py-8 lg:flex lg:items-center lg:justify-between lg:px-8">
+<div id="cookieBanner" class="bg-white fixed bottom-0 left-0 w-full shadow-md z-10 hidden" data-component="consent-modal">
+    <div id="consent-cookie-view" class="mx-auto max-w-7xl px-6 py-6 sm:py-8 lg:flex lg:items-center lg:justify-between lg:px-8">
         <h2 class="max-w-2xl text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-            This website uses cookies.
+            Your privacy matters.
         </h2>
         <p class="mt-2 max-w-2xl text-sm text-gray-600">
-            We use cookies to enhance your experience, analyze traffic, and for advertising purposes. Under the CCPA, you have the right to opt-out of data sharing.
-            By clicking “I Understand,” you consent to our use of cookies. Learn more about our cookies and how we use them from our <a href="{{ url("privacy-policy") }}" class="text-indigo-600 hover:underline inline-block">Privacy Policy</a>.
+            We use cookies to improve your experience and analyze traffic. Some are essential for site functionality, while others enhance performance. By clicking “I Understand,” you consent to their use.
+            Learn more about our cookies and how we use them in our
+            <a href="{{ url("privacy-policy") }}" class="text-indigo-600 hover:underline inline-block">
+                Privacy Policy</a>.
         </p>
         <div class="mt-4 flex items-center gap-x-4 lg:mt-0 lg:shrink-0">
             <button id="acceptCookies"
-                    class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    class="rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
                 I Understand
             </button>
         </div>
     </div>
 </div>
-
-{% js at endBody %}
-    document.addEventListener("DOMContentLoaded", function () {
-        const cookieBanner = document.getElementById("cookieBanner");
-        const acceptButton = document.getElementById("acceptCookies");
-
-        // Check if the user already accepted cookies
-        if (localStorage.getItem("cookieConsent") === "true") {
-            cookieBanner.style.display = "none";
-        }
-
-        // Dismiss banner on click and save preference
-        acceptButton.addEventListener("click", function () {
-            cookieBanner.style.display = "none";
-            localStorage.setItem("cookieConsent", "true"); // Store in localStorage
-        });
-    });
-{% endjs %}

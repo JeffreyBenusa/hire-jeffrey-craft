@@ -21,7 +21,9 @@
  */
 
 use craft\helpers\App;
+use modules\hirejeffrey\Module;
 
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+    'modules' => ['hire-jeffrey' => Module::class], 'bootstrap' => ['hire-jeffrey'],
 ];

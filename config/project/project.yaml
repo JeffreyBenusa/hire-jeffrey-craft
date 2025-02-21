@@ -1,4 +1,4 @@
-dateModified: 1739895278
+dateModified: 1740138477
 elementSources:
   craft\elements\Asset:
     -
@@ -172,18 +172,6 @@ meta:
     f97878e5-5b0c-4591-9251-1e45cbefc029: Page # Page
     fbc9eefe-5213-4b5f-b0d8-3b5673e14fe8: Globals # Globals
 plugins:
-  _hire-jeffrey-chat:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-    settings:
-      apiKey: $OPENAI_API_KEY
-      formatting:
-        -
-          - 'Do not return with any placeholders'
-        -
-          - 'Do not include a signature. Only return the body of the cover letter message.'
-      persona: "You are an expert career assistant writing cover letters for Jeffrey Benusa, a senior full-stack web developer with over eight years of experience.      Jeffrey specializes in PHP, JavaScript, and user-focused web development. He has led projects optimizing user journeys in e-commerce and content-driven platforms.     His expertise includes Laravel, Craft CMS, WordPress, MySQL, and API-driven architectures.         \r\nKey strengths:     \r\n- Strategic problem solver who builds scalable, maintainable solutions.     \r\n- Strong collaborator, working with product managers, designers, and stakeholders.    \r\n- Experienced in Agile and MVP-driven development.     \r\n- Passionate about performance optimization, ADA compliance, and user experience.      \r\n\r\nJeffrey has successfully led projects like:    \r\n- LeadFlex: Migrated logic into a plugin for efficiency across 70+ sites.     \r\n- MortonBuildings.com: Built a Tesla-inspired website using a component library.     \r\n- TrophyPA.com: Optimized MLS data integration by moving logic client-side with Vue.      \r\n\r\nPersonal Interests:     \r\n- Passionate about gardening, cooking, and fitness.     \r\n- Values sustainability, craftsmanship, and high-performance digital experiences.     \r\n- Generate a compelling, professional cover letter for Jeffrey tailored to the following job. \r\n\r\nOnly respond with the body of the cover letter."
   aws-s3:
     edition: standard
     enabled: true

@@ -1,33 +1,27 @@
 <?php
 
-namespace jeffreybenusa\crafthirejeffreychat\fields;
+namespace modules\hirejeffrey\fields;
 
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
-
-use craft\fields\conditions\TextFieldConditionRule;
-
+use craft\elements\db\ElementQueryInterface;
+use craft\helpers\Cp;
+use craft\helpers\Html;
+use craft\helpers\StringHelper;
 use yii\db\ExpressionInterface;
 use yii\db\Schema;
 
-use craft\helpers\Cp;
-use craft\helpers\StringHelper;
-
-
 /**
- * Cover Letter field type
+ * Structured Json field type
  */
-class CoverLetter extends Field
+class StructuredJson extends Field
 {
-    private string $persona;
-    private string $formating;
-    private string $message;
-
+    private string $json;
 
     public static function displayName(): string
     {
-        return Craft::t('_hire-jeffrey-chat', 'Cover Letter');
+        return Craft::t('_hire-jeffrey-chat', 'Structured Json');
     }
 
     public static function icon(): string
@@ -44,7 +38,7 @@ class CoverLetter extends Field
     {
         // Replace with the appropriate data type this field will store in the database,
         // or `null` if the field is managing its own data storage.
-        return Schema::TYPE_STRING;
+        return Schema::TYPE_JSON;
     }
 
     public function attributeLabels(): array
@@ -73,43 +67,15 @@ class CoverLetter extends Field
 
     protected function inputHtml(mixed $value, ?ElementInterface $element, bool $inline): string
     {
-
         $id = $this->getInputId();
 
-        $components = [
-            Cp::textareaHtml([
-                'id' => "$id-persona",
-                'name' => "$this->handle[persona]",
-                'label' => "Persona",
-                'value' => $value['persona'] ?? null
-            ]),
-            Cp::textareaHtml([
-                'id' => "$id-message",
-                'name' => "$this->handle[message]",
-                'label' => "Message",
-                'value' => $value['message'] ?? null
-            ]),
-
-            Cp::textareaHtml([
-                'id' => "$id-formatting",
-                'name' => "$this->handle[formatting]",
-                'label' => "Formatting",
-                'value' => $value['formatting'] ?? null
-            ]),
-        ];
-
-        return join('', $components);
-
-//
-//        // Decode saved JSON value
-//        $value = Json::decodeIfJson($value) ?? $value[0] ?? $value ?? "";
-//
-//        // Render an editable table
-//        return Craft::$app->getView()->renderTemplate('_hire-jeffrey-chat/coverLetter.twig', [
-//            'field' => $this,
-//            'name' => $this->handle, // Field handle
-//            'value' => $value, // Current value of the field
-//        ]);
+        return Cp::textareaHtml([
+            'id' => "$id-json",
+            'name' => "$this->handle[json]",
+            'label' => "Structured Json",
+            'value' => $value['json'] ?? null,
+            'rows'=> 12
+        ]);
     }
 
     public function getElementValidationRules(): array
@@ -124,7 +90,7 @@ class CoverLetter extends Field
 
     public function getElementConditionRuleType(): array|string|null
     {
-        return TextFieldConditionRule::class;
+        return null;
     }
 
     public static function queryCondition(

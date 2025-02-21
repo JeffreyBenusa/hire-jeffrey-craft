@@ -1,6 +1,6 @@
 <?php
 
-namespace jeffreybenusa\crafthirejeffreychat\models;
+namespace modules\hirejeffrey\models;
 
 use Craft;
 use craft\base\Model;

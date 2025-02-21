@@ -1,35 +1,53 @@
-// Define the cookie name and expiration
-const COOKIE_NAME = "gtm_cookie_consent";
-const COOKIE_EXPIRATION_DAYS = 365; // 1 year
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieName = "GTM_COOKIE_CONSENT";
+    const cookieBanner = document.getElementById("cookieBanner");
+    const acceptCookiesBtn = document.getElementById("acceptCookies");
 
-// Function to set a cookie with encoding
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        let date = new Date();
+    const DEFAULT_CONSENT = {
+        accepted: false,
+    };
+
+    // Utility to handle cookies
+    function setCookie(name, value, days) {
+        const date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-        expires = "; expires=" + date.toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(JSON.stringify(value))}; path=/; max-age=${days * 24 * 60 * 60}`;
     }
-    const encodedValue = encodeURIComponent(JSON.stringify(value));
-    document.cookie = `${name}=${encodedValue}; path=/; SameSite=Lax; Secure${expires}`;
-}
 
-// Function to get and decode a cookie
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) {
-        return decodeURIComponent(parts.pop().split(";").shift());
+    function getCookie(name) {
+        const cookieStr = document.cookie.split("; ").find(row => row.startsWith(`${name}=`));
+        if (!cookieStr) {
+            setCookie(name, DEFAULT_CONSENT, 365);
+            return DEFAULT_CONSENT;
+        }
+
+        try {
+            return JSON.parse(decodeURIComponent(cookieStr.split("=")[1]));
+        } catch (err) {
+            console.error(`Error parsing cookie ${name}:`, err);
+            return DEFAULT_CONSENT;
+        }
     }
-    return null;
-}
 
-// Define default consent settings (all granted)
-const consentSettings = {};
+    // Load and initialize consent data
+    let consentData = getCookie(cookieName);
 
-// Check if cookie exists, otherwise set it
-let storedConsent = getCookie(COOKIE_NAME);
-if (!storedConsent) {
-    setCookie(COOKIE_NAME, consentSettings, COOKIE_EXPIRATION_DAYS);
-    storedConsent = consentSettings;
-}
+    // Show or hide the banner
+    function toggleBanner(show) {
+        show
+            ? cookieBanner.classList.remove("hidden")
+            : cookieBanner.classList.add("hidden");
+    }
+
+    // Set initial display based on consent
+    toggleBanner(!consentData.accepted);
+
+    // Event listener: Accept all cookies
+    acceptCookiesBtn.addEventListener("click", function () {
+        const newConsent = {
+            accepted: true
+        };
+        setCookie(cookieName, newConsent, 365);
+        toggleBanner(false);
+    });
+});
