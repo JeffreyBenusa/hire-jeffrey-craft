@@ -24,19 +24,18 @@
     <meta property="og:description" content="{{ seoDescription }}">
     <meta property="og:url" content="{{ entry.url ?? siteUrl }}">
     <meta property="og:image" content="{{ seoImage.getUrl('openGraph') }}">
-    <meta property="og:image:alt" content="Jeffrey Benusa - Engineering Leadership & Web Development">
+    <meta property="og:image:alt" content="{{ seoImage.alt }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
-    <meta property="og:author" content="Jeffrey Benusa">
-    <meta property="og:site_name" content="Hire Jeffrey">
-    <meta property="og:locale" content="en_US">
 
     {# Twitter Cards #}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ seoTitle }}">
     <meta name="twitter:description" content="{{ seoDescription }}">
     <meta name="twitter:image" content="{{ seoImage.getUrl('twitter') }}">
-    <meta name="twitter:image:alt" content="Jeffrey Benusa - Engineering Leadership & Web Development">
-    <meta name="twitter:site" content="@nerd_from_mn">
+    <meta name="twitter:image:alt" content="{{ seoImage.alt }}">
     <meta name="twitter:creator" content="@nerd_from_mn">
 
     <!-- Google Tag Manager -->

@@ -22,7 +22,7 @@
                 </p>
                 {% if project.skillsAndTechnologies | length %}
                     {% set skills = project.skillsAndTechnologies.limit(5) %}
-                    <ul class="mt-4">
+                    <ul class="mt-4" role="list">
                         {% for skill in skills %}
                             {% include 'projects/_partials/pill' with { params: { title: skill.title }} %}
                         {% endfor %}

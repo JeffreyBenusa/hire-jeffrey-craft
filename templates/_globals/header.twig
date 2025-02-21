@@ -1,9 +1,10 @@
-<nav class="bg-gray-800 fixed top-0 z-50 w-full">
+<nav class="bg-gray-800 fixed top-0 z-20 w-full">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
-                <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
                     <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -17,16 +18,16 @@
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div class="flex shrink-0 items-center">
                     <a href="/" class="h-8 w-auto">
-                        <img class="h-8" src="{{ craft.vite.asset("src/img/hirejeffrey/HireJeffrey-Long.svg") }}" alt="Hire Jeffrey logo" title="Hire Jeffrey">
+                        <img class="h-8" src="{{ craft.vite.asset("src/img/hirejeffrey/HireJeffrey-Long.svg") }}" alt="Hire Jeffrey - Web Development & Engineering Leadership" title="Hire Jeffrey - Web Development & Engineering Leadership">
                     </a>
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
-                        <a href="{{ url('projects') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white {{ _self.isActive('projects') | trim }}">Projects</a>
-                        <a href="{{ url('about-me') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white {{ _self.isActive('about-me') | trim }}">About Me</a>
-                        {% if currentUser %}<a href="{{ url('blog') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white {{ _self.isActive('blog') | trim }}">Blog</a>{% endif %}
-                        <a href="{{ url('contact') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white {{ _self.isActive('contact') | trim }}">Contact</a>
-                        <a href="{{ globals.resume.one().url }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" target="_blank" download>Resume</a>
+                    <div class="flex space-x-4 text-gray-300">
+                        <a href="{{ url('projects') }}" class="transition rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white {{ _self.isActive('projects') | trim }}">Projects</a>
+                        <a href="{{ url('about-me') }}" class="transition rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white {{ _self.isActive('about-me') | trim }}">About Me</a>
+                        {% if currentUser %}<a href="{{ url('blog') }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white {{ _self.isActive('blog') | trim }}">Blog</a>{% endif %}
+                        <a href="{{ url('contact') }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white {{ _self.isActive('contact') | trim }}">Contact</a>
+                        <a href="{{ globals.resume.one().url }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white" target="_blank" download>Resume</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +48,7 @@
 
 {% macro isActive(uri) %}
     {% if craft.app.request.getPathInfo() == uri %}
-        bg-gray-500
+        bg-white text-accent-dark
     {% else %}
         text-gray-300
     {% endif %}
