@@ -12,7 +12,7 @@ export default {
           dark: "#172554"
         },
         teal: {
-          "DEFAULT": "#14B8A6",
+          "DEFAULT": "#13a394",
           light: "#5EEAD4",
           dark: "#0F766E"
         },
@@ -33,7 +33,16 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Roboto', 'ui-sans-serif', 'system-ui'], // Set Roboto as default sans-serif
+        sans: [
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif'
+        ],
       },
     },
   },
