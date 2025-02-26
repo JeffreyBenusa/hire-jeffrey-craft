@@ -5,4 +5,4 @@ name: 'Structured Json'
 searchable: false
 translationKeyFormat: null
 translationMethod: none
-type: jeffreybenusa\crafthirejeffreychat\fields\StructuredJson
+type: modules\hirejeffrey\fields\StructuredJson

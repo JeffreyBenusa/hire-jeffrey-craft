@@ -86,7 +86,7 @@ fieldLayouts:
           -
             dateAdded: '2025-02-08T14:48:44+00:00'
             elementCondition: null
-            fieldUid: f23dd440-00b7-4eba-82b4-705eecd516ff # CoverLetterField
+            fieldUid: f23dd440-00b7-4eba-82b4-705eecd516ff
             handle: null
             includeInCards: false
             instructions: null

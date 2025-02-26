@@ -21,7 +21,7 @@ class StructuredJson extends Field
 
     public static function displayName(): string
     {
-        return Craft::t('_hire-jeffrey-chat', 'Structured Json');
+        return "Structured Json";
     }
 
     public static function icon(): string
