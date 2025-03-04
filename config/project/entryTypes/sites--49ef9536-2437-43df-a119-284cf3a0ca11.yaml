@@ -52,6 +52,22 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2025-03-04T14:36:24+00:00'
+            elementCondition: null
+            fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
+            handle: company
+            includeInCards: false
+            instructions: null
+            label: Company
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 73c33646-2f6c-4b8c-a133-fc45e8ace19a
+            userCondition: null
+            warning: null
+            width: 50
+          -
             dateAdded: '2025-02-12T00:50:44+00:00'
             elementCondition: null
             fieldUid: 1dff345e-edd5-4f00-94d7-b6190c109b2a # Asset

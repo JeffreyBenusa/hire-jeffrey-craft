@@ -6,7 +6,7 @@
 {% block content %}
     {% cache %}
         <div class="py-28">
-            <article class="mx-auto max-w-7xl px-6 text-gray-dark">
+            <article class="mx-auto max-w-7xl px-6 text-gray-dark mb-14">
                 <!-- Hero section -->
                 <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
                     <div class="bg-white rounded-xl p-2 inline-block">
@@ -50,7 +50,7 @@
                 {% set hasSkills = entry.skillsAndTechnologies | length ? true : false %}
 
                 <!-- Content section -->
-                <div class="sm:mt-0 mb-24 lg:grid lg:grid-cols-3">
+                <div class="sm:mt-0 lg:grid lg:grid-cols-3">
                     <div class="lg:col-span-2">
                         <h2 class="text-pretty text-accent-dark text-3xl font-semibold tracking-tight sm:text-5xl mb-4">
                             Challenges + Solutions</h2>
@@ -72,6 +72,10 @@
                         </div>
                     {% endif %}
                 </div>
+                <footer>
+                    <p class="text-xs mt-3 italic text-gray-400">&copy; {{ entry.title }} is trademarked and the property of {{ entry.company }}. All rights reserved.</p>
+                </footer>
+                
             </article>
 
             <!-- Blog section -->
