@@ -40,3 +40,52 @@
         </div>
     </section>
 {% endblock %}
+
+{% block structuredData %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "name": "{{ entry.title }}",
+                    "url": "{{ entry.url }}",
+                    "description": "{{ entry.description }}",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Jeffrey Benusa",
+                        "url": "{{ siteUrl }}"
+                    },
+                    "publisher": {
+                        "@type": "Person",
+                        "name": "Jeffrey Benusa",
+                        "url": "{{ siteUrl }}"
+                    },
+                    "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
+                    "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
+                    "inLanguage": "en",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "{{ entry.url }}"
+                    }
+                },{
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "{{ siteUrl }}"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Projects",
+                            "item": "{{ url('projects') }}"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+{% endblock %}

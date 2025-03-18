@@ -10,8 +10,11 @@
                 <!-- Hero section -->
                 <header class="sm:mt-0 mb-12 relative lg:flex lg:flex-row-reverse lg:justify-between">
                     <div class="bg-white rounded-xl p-2 inline-block">
-                        <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}" class="p-2 h-24 lg:max-h-40" height="96"
-                             title="{{ entry.title }} Website" loading="eager">
+                        <img src="{{ clientLogo.url }}" alt="{{ clientLogo.alt }}"
+                             class="p-2 h-24 lg:max-h-40"
+                             height="96"
+                             title="{{ entry.title }} Website"
+                             loading="eager">
                     </div>
                     <div class="flex flex-col justify-center">
                         <h1 class="text-pretty text-4xl font-semibold tracking-tight sm:text-7xl pr-6">{{ entry.title }}</h1>
@@ -37,8 +40,10 @@
                     {% for screenshot in entry.previewImage.limit(3).all() %}
                         {% if screenshot.domain is not empty %}<a href="{{ screenshot.domain }}"target="_blank">{% endif %}
                         <figure>
-                            <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}" title="{{ screenshot.title }}" loading="eager"
-                                 class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition" width="320" height="480">
+                            <img src="{{ screenshot.url(transform) }}" alt="{{ screenshot.alt }}"
+                                 title="{{ screenshot.title }}" loading="eager"
+                                 class="aspect-[2/3] w-full rounded-xl bg-gray-800/5 object-cover shadow-lg hover:scale-105 transition"
+                                 width="320" height="480">
                             <figcaption class="text-center p-4 text-accent-dark font-medium">
                                 {{ screenshot.title }}
                             </figcaption>
@@ -73,9 +78,10 @@
                     {% endif %}
                 </div>
                 <footer>
-                    <p class="text-xs mt-3 italic text-gray-400">&copy; {{ entry.title }} is trademarked and the property of {{ entry.company }}. All rights reserved.</p>
+                    <p class="text-xs mt-3 italic text-gray-400">&copy; {{ entry.title }} is trademarked and the
+                        property of {{ entry.company }}. All rights reserved.</p>
                 </footer>
-                
+
             </article>
 
             <!-- Blog section -->
@@ -110,6 +116,55 @@
 
 {% block structuredData %}
     <script type="application/ld+json">
-        {{ entry.structuredJson.json | raw }}
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "name": "{{ entry.title }}",
+                    "url": "{{ entry.url }}",
+                    "description": "{{ entry.description }}",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Jeffrey Benusa",
+                        "url": "{{ siteUrl }}"
+                    },
+                    "publisher": {
+                        "@type": "Person",
+                        "name": "Jeffrey Benusa",
+                        "url": "{{ siteUrl }}"
+                    },
+                    "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
+                    "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
+                    "inLanguage": "en",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "{{ entry.url }}"
+                    }
+                },{
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "{{ siteUrl }}"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Projects",
+                            "item": "{{ url('projects') }}"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "{{ entry.title }}",
+                            "item": "{{ entry.url }}"
+                        }
+                    ]
+                }
+            ]
+        }
     </script>
 {% endblock %}

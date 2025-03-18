@@ -47,7 +47,9 @@
     <!-- End Google Tag Manager -->
 
     {{ craft.vite.script("src/js/app.js", false) }}
-    {% include "_globals/header/json" %}
+    {% block structuredData %}
+        {% include "_globals/header/json" %} {# Fallback #}
+    {% endblock %}
 </head>
 <body>
     <a href="#main-content" class="absolute left-0 top-0 bg-blue-700 text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition">Skip to main content</a>
