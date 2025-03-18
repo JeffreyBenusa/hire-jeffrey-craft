@@ -4,8 +4,6 @@ namespace modules\hirejeffrey;
 
 use Craft;
 use craft\events\RegisterComponentTypesEvent;
-use craft\services\Fields;
-use modules\hirejeffrey\fields\StructuredJson;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
 
@@ -44,11 +42,5 @@ class Module extends BaseModule
     {
         // Register event handlers here ...
         // (see https://craftcms.com/docs/5.x/extend/events.html to get started)
-        Event::on(Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES,
-            function (RegisterComponentTypesEvent $event) {
-                $event->types[] = StructuredJson::class;
-            }
-        );
     }
 }
