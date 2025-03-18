@@ -121,6 +121,22 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-03-18T14:03:29+00:00'
+            elementCondition: null
+            fieldUid: 15abe1c8-b38f-4e4a-a607-5ff569d66fee # SEO Index
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 052186e1-0cbb-4a09-98d1-bf8894b85223
+            userCondition: null
+            warning: null
+            width: 100
         name: SEO
         uid: 19c29c62-c492-42e4-b9e3-3a9a4578556b
         userCondition: null

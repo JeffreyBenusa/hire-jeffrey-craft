@@ -1,4 +1,4 @@
-dateModified: 1741098984
+dateModified: 1742306609
 elementSources:
   craft\elements\Asset:
     -
@@ -143,6 +143,7 @@ meta:
     8eca8826-b225-4670-9412-52fbd69aab7b: 'Public Schema' # Public Schema
     8f9f9e63-916f-4e0b-a13f-237eaedf6d60: Dropdown # Dropdown
     9a4f0ca1-ced8-4a29-8f8a-dba746be2d4f: Resume # Resume
+    15abe1c8-b38f-4e4a-a607-5ff569d66fee: 'SEO Index' # SEO Index
     45e337c3-c8db-4f41-8c36-3fffd0b1895b: AWS # AWS
     49ef9536-2437-43df-a119-284cf3a0ca11: Sites # Sites
     057dd961-93b0-4b3c-8bdc-29f1a26a6c38: 'Rich Text' # Rich Text

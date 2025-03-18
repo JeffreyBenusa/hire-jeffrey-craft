@@ -16,8 +16,8 @@
     <title>{{ seoTitle }} </title>
     <meta name="description" content="{{ seoDescription }}">
     <meta name="author" content="Jeffrey Benusa">
+    <meta name="robots" content="{{ (entry.seoIndex ? 'index, follow' : 'noindex, nofollow' ) ??? 'index, follow' }}" />
     <link rel="canonical" href="{{ seoUrl }}">
-    <meta name="robots" content="index, follow" />
 
     {# Open Graph (Facebook, LinkedIn, etc.) #}
     <meta property="og:title" content="{{ seoTitle }}">

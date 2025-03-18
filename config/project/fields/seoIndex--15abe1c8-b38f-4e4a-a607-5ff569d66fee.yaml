@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: seoIndex
+instructions: null
+name: 'SEO Index'
+searchable: false
+settings:
+  default: true
+  offLabel: 'noindex, nofollow'
+  onLabel: 'index, follow'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
