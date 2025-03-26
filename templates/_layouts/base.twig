@@ -11,12 +11,13 @@
     {% set seoDescription = entry.description ??? globals.description %}
     {% set seoUrl = entry.url ??? craft.app.request.url | split('?') | first %}
     {% set seoImage = entry.image.one() ??? globals.image.one() %}
+    {% set seoIndex = entry.seoIndex is not null ? (entry.seoIndex ? 'index, follow' : 'noindex, nofollow') : 'index, follow'  %}
 
     {# Standard Meta Tags #}
     <title>{{ seoTitle }} </title>
     <meta name="description" content="{{ seoDescription }}">
     <meta name="author" content="Jeffrey Benusa">
-    <meta name="robots" content="{{ (entry.seoIndex ? 'index, follow' : 'noindex, nofollow' ) ??? 'index, follow' }}" />
+    <meta name="robots" content="{{ seoIndex }}" />
     <link rel="canonical" href="{{ seoUrl }}">
 
     {# Open Graph (Facebook, LinkedIn, etc.) #}
