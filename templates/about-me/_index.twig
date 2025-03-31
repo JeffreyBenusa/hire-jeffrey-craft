@@ -29,3 +29,61 @@
         </div>
     </section>
 {% endblock %}
+
+{% block structuredData %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "@id": "https://hirejeffrey.com#jeffreybenusa",
+                    "name": "Jeffrey Benusa",
+                    "url": "https://hirejeffrey.com",
+                    "jobTitle": "Full-Stack Developer",
+                    "sameAs": [
+                        "https://hirejeffrey.com",
+                        "https://www.linkedin.com/in/benusa/"
+                    ]
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://hirejeffrey.com/about-me#webpage",
+                    "url": "https://hirejeffrey.com/about-me",
+                    "name": "About Jeffrey Benusa",
+                    "description": "Learn more about Jeffrey Benusa, a senior full-stack developer based in Nashville, TN, and his approach to building scalable, user-first digital solutions.",
+                    "inLanguage": "en",
+                    "author": {
+                        "@id": "https://hirejeffrey.com#jeffreybenusa"
+                    },
+                    "publisher": {
+                        "@id": "https://hirejeffrey.com#jeffreybenusa"
+                    },
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "https://hirejeffrey.com/about-me"
+                    },
+                    "datePublished": "2024-02-15",
+                    "dateModified": "2025-03-31"
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://hirejeffrey.com"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "About Me",
+                            "item": "https://hirejeffrey.com/about-me"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+{% endblock %}
