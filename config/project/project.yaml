@@ -1,4 +1,4 @@
-dateModified: 1742306609
+dateModified: 1743543940
 elementSources:
   craft\elements\Asset:
     -
@@ -159,6 +159,7 @@ meta:
     78948a7b-e2a4-4a90-8582-95357d40f074: Subheadline # Subheadline
     80412e80-59f7-447c-8642-9037a7777c18: Pages # Pages
     2616147f-e34e-4583-ae00-2138490ff973: 'Projects Catalog' # Projects Catalog
+    a0b88a09-1f4d-443e-aeaf-7c47ceb3f466: 'Content Image' # Content Image
     ac3954a9-9b19-4a6b-8e36-b6889c19cdc1: Twitter # Twitter
     ae8b0a48-f402-4e29-b4bf-c640bc1ff7f7: 'Open Graph' # Open Graph
     afd412bf-24db-4e78-8dc2-f3fcfaf17cdd: Blog # Blog

@@ -28,7 +28,7 @@
                     <div class="flex space-x-4 text-gray-300">
                         <a href="{{ url('projects') }}" class="transition rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white {{ _self.isActive('projects') | trim }}">Projects</a>
                         <a href="{{ url('about-me') }}" class="transition rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white {{ _self.isActive('about-me') | trim }}">About Me</a>
-                        {% if currentUser %}<a href="{{ url('blog') }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white {{ _self.isActive('blog') | trim }}">Blog</a>{% endif %}
+                        <a href="{{ url('lighthouse-report') }}" class="transition rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white {{ _self.isActive('lighthouse-report') | trim }}">Report Card</a>
                         <a href="{{ url('contact') }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white {{ _self.isActive('contact') | trim }}">Contact</a>
                         <a href="{{ globals.resume.one().url }}" class="transition rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white" target="_blank" download>Resume</a>
                     </div>
@@ -42,7 +42,7 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <a href="{{ url('projects') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Projects</a>
             <a href="{{ url('about-me') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">About Me</a>
-            {% if currentUser %}<a href="{{ url('blog') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Blog</a>{% endif %}
+            <a href="{{ url('lighthouse-report') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Report Card</a>
             <a href="{{ url('contact') }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Contact</a>
             <a href="{{ globals.resume.one().url }}" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white" target="_blank" download>Resume</a>
         </div>
