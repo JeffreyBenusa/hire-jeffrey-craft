@@ -1,4 +1,4 @@
-dateModified: 1743543940
+dateModified: 1744401920
 elementSources:
   craft\elements\Asset:
     -
@@ -533,5 +533,6 @@ system:
   edition: solo
   live: true
   name: hirejeffrey.com
+  retryDuration: null
   schemaVersion: 5.6.0.2
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
