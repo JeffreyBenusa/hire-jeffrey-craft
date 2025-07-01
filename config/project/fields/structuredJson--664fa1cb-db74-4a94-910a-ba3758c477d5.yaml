@@ -1,8 +1,0 @@
-columnSuffix: null
-handle: structuredJson
-instructions: null
-name: 'Structured Json'
-searchable: false
-translationKeyFormat: null
-translationMethod: none
-type: modules\hirejeffrey\fields\StructuredJson

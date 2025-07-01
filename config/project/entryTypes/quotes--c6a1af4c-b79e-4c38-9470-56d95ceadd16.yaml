@@ -1,12 +1,15 @@
 color: null
+description: null
 fieldLayouts:
   5104ce5e-8c58-4238-a381-532fe3345eff:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-02-14T21:19:32+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: message
@@ -23,6 +26,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-14T21:19:32+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: cite
@@ -39,6 +43,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-14T21:19:32+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: quote

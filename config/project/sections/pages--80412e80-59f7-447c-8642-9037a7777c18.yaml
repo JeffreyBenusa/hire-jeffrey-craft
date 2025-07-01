@@ -13,11 +13,11 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - urlFormat
-        - '{url}'
-      -
         - refresh
         - '1'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   7b44d990-5db1-4fac-be77-aee6b2337323: # hirejeffrey.com

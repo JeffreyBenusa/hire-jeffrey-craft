@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   aaded414-39a3-493e-afe1-f7455e86d0ce:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,11 +39,12 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-08T01:42:13+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1dff345e-edd5-4f00-94d7-b6190c109b2a # Asset
             handle: resume
             includeInCards: false
-            instructions: 'General Resume for vistor''s to download '
+            instructions: "General Resume for vistor's to download "
             label: Resume
             providesThumbs: false
             required: false
@@ -53,6 +56,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-14T21:43:33+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: description
@@ -69,6 +73,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-16T00:40:17+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f5f813f1-a303-421c-bb18-6dfaf36fa7b5 # Image
             handle: null

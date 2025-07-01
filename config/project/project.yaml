@@ -1,4 +1,4 @@
-dateModified: 1744401920
+dateModified: 1751405322
 elementSources:
   craft\elements\Asset:
     -
@@ -151,7 +151,6 @@ meta:
     69a0b0da-4944-4393-b673-5c6ccd3b2480: Domain # Domain
     96bd0c6d-7cf4-4ed5-860d-5e00a27629d8: 'About Me' # About Me
     99dfbf8d-7e14-44f7-a26a-20d25e1ef691: Simple # Simple
-    664fa1cb-db74-4a94-910a-ba3758c477d5: 'Structured Json' # Structured Json
     2060e520-fe90-489f-b32f-726170cb427d: Applications # Applications
     3592eaa3-4b71-46ee-9ee3-192fe5cbf090: Globals # Globals
     9489bfa8-b063-4df9-b031-cc14d1021a49: Projects # Projects
@@ -196,7 +195,7 @@ plugins:
   freeform:
     edition: express
     enabled: true
-    schemaVersion: 5.4.2
+    schemaVersion: 5.6.1
     settings:
       alertNotificationRecipients: null
       allowDashesInFieldHandles: false
@@ -212,8 +211,8 @@ plugins:
       bypassSpamCheckOnLoggedInUsers: false
       clientDigestFrequency: 1
       clientDigestRecipients: null
-      defaultFromEmail: '{{ craft.app.projectConfig.get(''email.fromEmail'') }}'
-      defaultFromName: '{{ craft.app.projectConfig.get(''email.fromName'') }}'
+      defaultFromEmail: "{{ craft.app.projectConfig.get('email.fromEmail') }}"
+      defaultFromName: "{{ craft.app.projectConfig.get('email.fromName') }}"
       defaultView: forms
       defaults:
         __assoc__:
@@ -479,6 +478,7 @@ plugins:
       displayFeed: true
       emailTemplateDefault: database
       emailTemplateDirectory: ''
+      emailTemplateMethod: global
       emailTemplateStorageType: files_database
       exportHandlesAsNames: false
       exportLabels: false
@@ -534,5 +534,5 @@ system:
   live: true
   name: hirejeffrey.com
   retryDuration: null
-  schemaVersion: 5.6.0.2
+  schemaVersion: 5.8.0.3
   timeZone: America/Chicago

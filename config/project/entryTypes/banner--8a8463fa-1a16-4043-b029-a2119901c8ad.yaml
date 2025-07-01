@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   f357c0bd-f027-4eaa-868e-256b14c85542:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +39,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-16T00:10:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: cc4f624e-61f6-4994-928d-51df13c898c4 # Text Field
             handle: description

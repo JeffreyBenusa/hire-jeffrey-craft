@@ -9,6 +9,7 @@ settings:
   allowUploads: true
   allowedKinds: null
   branchLimit: null
+  defaultPlacement: end
   defaultUploadLocationSource: 'volume:45e337c3-c8db-4f41-8c36-3fffd0b1895b' # AWS
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
@@ -22,6 +23,7 @@ settings:
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false
+  showSearchInput: true
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false

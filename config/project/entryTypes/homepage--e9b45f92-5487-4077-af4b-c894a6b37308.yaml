@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   08fc84f7-75a7-4998-a08d-765751676644:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +39,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-16T20:01:54+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: null
@@ -53,6 +56,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-16T00:34:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: tagline
@@ -69,6 +73,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-16T00:34:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: mainCta
@@ -85,6 +90,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-02-06T18:27:14+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 7b07edc7-6ef3-4884-833c-96c90aa87ec3 # Matrix
             handle: null
@@ -107,6 +113,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-02-07T20:32:41+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f5f813f1-a303-421c-bb18-6dfaf36fa7b5 # Image
             handle: bannerImage
@@ -129,6 +136,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-02-14T21:43:17+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 8eb826e2-71f2-4e31-a635-bbbec0160110 # Headline
             handle: description
