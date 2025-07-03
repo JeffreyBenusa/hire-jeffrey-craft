@@ -115,51 +115,62 @@
 {% endblock %}
 
 {% block structuredData %}
+    {% set tagMap = craft.hireJeffrey.schemaTags(entry.skillsAndTechnologies.all()) %}
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@graph": [
                 {
                     "@type": "WebPage",
+                    "@id": "{{ entry.url }}",
                     "name": "{{ entry.title }}",
+                    "headline": "{{ entry.title }}",
                     "url": "{{ entry.url }}",
                     "description": "{{ entry.description }}",
+                    "inLanguage": "en",
                     "author": {
-                        "@type": "Person",
-                        "name": "Jeffrey Benusa",
-                        "url": "{{ siteUrl }}"
+                    "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
                     },
                     "publisher": {
-                        "@type": "Person",
-                        "name": "Jeffrey Benusa",
-                        "url": "{{ siteUrl }}"
+                    "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                    },
+                    "mainEntity": {
+                      "@id": "{{ entry.url }}#code"
                     },
                     "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
-                    "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
-                    "inLanguage": "en",
-                    "mainEntityOfPage": {
-                        "@type": "WebPage",
-                        "@id": "{{ entry.url }}"
-                    }
+                    "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}"
                 },{
-                    "@type": "SoftwareApplication",
+                    "@type": "CreativeWork",
+                    "@id": "{{ entry.url }}#code",
                     "name": "{{ entry.title }}",
-                    "operatingSystem": "All",
-                    "applicationCategory": "BusinessApplication",
                     "description": "{{ entry.description }}",
                     "url": "{{ entry.url }}",
                     "creator": {
-                        "@type": "Person",
-                        "name": "Jeffrey Benusa",
-                        "url": "{{ siteUrl }}about-me"
+                      "@id": "{{  craft.hireJeffrey.schemaPersonUrl }}"
                     },
+                    "publisher": {
+                      "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                    },
+                    "license": "Proprietary",
                     "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
                     "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
                     "inLanguage": "en",
                     "mainEntityOfPage": {
                         "@type": "WebPage",
                         "@id": "{{ entry.url }}"
-                    }
+                    },
+                    "image": "{{ entry.previewImage.one().url ??? entry.logo.one().url ??? "" }}",
+                    "about": [
+                    {% for tag in [...tagMap.about, ...tagMap.programmingLanguage]  %}
+                        {
+                          "@type": "Thing",
+                          "name": {{ tag|json_encode | raw }}
+                        }{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                    ],
+                    "keywords": [
+                      {{ tagMap.keywords | map(tag => '"' ~ tag ~ '"') | join(', ') | raw }}
+                    ]
                 },{
                     "@type": "BreadcrumbList",
                     "itemListElement": [

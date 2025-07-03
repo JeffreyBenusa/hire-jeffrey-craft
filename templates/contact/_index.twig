@@ -46,50 +46,42 @@
             "@graph": [
                 {
                     "@type": "ContactPage",
-                    "@id": "{{ url(contact) }}#jeffreyBenusa",
+                    "@id": "{{ siteUrl('contact') }}#webpage",
                     "name": "Contact Jeffrey Benusa",
-                    "url": "{{ url(contact) }}",
-                    "description": "Get in touch with Jeffrey Benusa for freelance projects, consulting, or technical inquiries.",
-                    "mainEntity": {
-                        "@type": "Person",
-                        "@id": "https://hirejeffrey.com/#jeffreyBenusa"
+                    "url": "{{ siteUrl('contact') }}",
+                    "description": "{{ entry.description ??? global.description }}",
+                    "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
+                    "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
+                    "author": {
+                      "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                    },
+                    "publisher": {
+                      "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
                     },
                     "inLanguage": "en",
-                    "image": "https://d5ne0y457wos3.cloudfront.net/_openGraph/HireJeffrey-Logo-Teal.png"
-                },
-                {
-                    "@type": "Person",
-                    "@id": "https://hirejeffrey.com/#jeffreyBenusa",
-                    "name": "Jeffrey Benusa",
-                    "url": "https://hirejeffrey.com/",
-                    "jobTitle": "Full-Stack Web Developer || Web Dev Manager",
-                    "email": "mailto:jeff.benusa@gmail.com",
-                    "sameAs": [
-                        "https://www.linkedin.com/in/benusa/",
-                        "https://github.com/JeffreyBenusa"
-                    ],
-                    "contactPoint": {
-                        "@type": "ContactPoint",
-                        "contactType": "customer support",
-                        "email": "mailto:jeff.benusa@gmail.com",
-                        "availableLanguage": ["English"]
+                    "image": "{{ globals.logo.one().url({format:'webp', height:'600', width:'600'}) }}",
+                    "isPartOf": {
+                        "@type": "WebSite",
+                        "@id": "{{ siteUrl() }}#website"
+                    },
+                    "mainEntity": {
+                      "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
                     }
                 },
                 {
                     "@type": "BreadcrumbList",
-                    "@id": "https://hirejeffrey.com/contact#breadcrumb",
                     "itemListElement": [
                         {
                             "@type": "ListItem",
                             "position": 1,
                             "name": "Home",
-                            "item": "https://hirejeffrey.com/"
+                            "item": "{{ siteUrl() }}"
                         },
                         {
                             "@type": "ListItem",
                             "position": 2,
                             "name": "Contact",
-                            "item": "https://hirejeffrey.com/contact"
+                            "item": "{{ siteUrl('contact') }}"
                         }
                     ]
                 }

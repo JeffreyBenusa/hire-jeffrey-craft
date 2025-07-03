@@ -1,26 +1,58 @@
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "{{ entry.title }}",
-            "url": "{{ entry.url }}",
-            "description": "{{ entry.description ??? globals.description }}",
-            "author": {
-                "@type": "Person",
-                "name": "Jeffrey Benusa",
-                "url": "{{ siteUrl }}"
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "{{ siteUrl }}#website",
+                "url": "{{ siteUrl }}",
+                "name": "Hire Jeffrey Benusa",
+                "description": "{{ globals.description }}",
+                "inLanguage": "en",
+                "publisher": {
+                    "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "{{ globals.logo.one().url({format:'webp', height:'630', width:'1200'}) }}",
+                    "width": 1200,
+                    "height": 630
+                }
             },
-            "publisher": {
-                "@type": "Person",
-                "name": "Jeffrey Benusa",
-                "url": "{{ siteUrl }}"
-            },
-            "datePublished": "2024-02-15",
-            "dateModified": "2024-02-15",
-            "inLanguage": "en",
-            "mainEntityOfPage": {
+            {
                 "@type": "WebPage",
-                "@id": "{{ entry.url }}"
+                "@id": "{{ siteUrl }}#webpage",
+                "url": "{{ siteUrl }}",
+                "name": "{{ entry.title }}",
+                "description": "{{ entry.description ??? globals.description }}",
+                "isPartOf": {
+                    "@id": "{{ siteUrl }}#website"
+                },
+                "author": {
+                  "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                },
+                "publisher": {
+                  "@id": "{{ craft.hireJeffrey.schemaPersonUrl }}"
+                },
+                "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
+                "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
+                "inLanguage": "en",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "{{ siteUrl }}"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "{{ siteUrl }}"
+                    }
+                ]
             }
-        }
+        ]
+    }
 </script>

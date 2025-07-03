@@ -10,7 +10,7 @@
     {% set seoTitle = entry.title ~ " | HireJeffrey.com" | default("Hire Jeffrey | Engineering Leadership & Web Development") %}
     {% set seoDescription = entry.description ??? globals.description %}
     {% set seoUrl = entry.url ??? craft.app.request.url | split('?') | first %}
-    {% set seoImage = entry.image.one() ??? globals.image.one() %}
+    {% set seoImage = entry.image.one() ??? globals.logo.one()  %}
     {% set seoIndex = entry.seoIndex is not null ? (entry.seoIndex ? 'index, follow' : 'noindex, nofollow') : 'index, follow'  %}
 
     {# Standard Meta Tags #}
