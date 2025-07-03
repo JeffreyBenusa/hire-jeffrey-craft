@@ -44,74 +44,74 @@
 
 {% block structuredData %}
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@graph": [
+    {
+        "@context": "https://schema.org",
+        "@graph": [
             {
-              "@type": "CollectionPage",
-              "name": "{{ entry.title }}",
-              "url": "{{ entry.url }}",
-              "description": "{{ entry.description }}",
-              "author": {
-                "@type": "Person",
-                "name": "Jeffrey Benusa",
-                "url": "{{ siteUrl }}"
-              },
-              "publisher": {
-                "@type": "Person",
-                "name": "Jeffrey Benusa",
-                "url": "{{ siteUrl }}"
-              },
-              "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
-              "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
-              "inLanguage": "en",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "{{ entry.url }}"
-              },
-              "hasPart": [
-                {% for project in craft.entries.section('projects').all() %}
-                {
-                  "@type": "SoftwareApplication",
-                  "name": "{{ project.title }}",
-                  "operatingSystem": "All",
-                  "applicationCategory": "WebApplication",
-                  "description": "{{ project.description }}",
-                  "url": "{{ project.url }}",
-                  "creator": {
+                "@type": "CollectionPage",
+                "name": "{{ entry.title }}",
+                "url": "{{ entry.url }}",
+                "description": "{{ entry.description }}",
+                "author": {
                     "@type": "Person",
                     "name": "Jeffrey Benusa",
-                    "url": "{{ siteUrl ~ 'about-me' }}"
-                  },
-                  "datePublished": "{{ project.postDate|date('Y-m-d') }}",
-                  "dateModified": "{{ project.dateUpdated|date('Y-m-d') }}",
-                  "inLanguage": "en",
-                  "mainEntityOfPage": {
+                    "url": "{{ siteUrl }}"
+                },
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Jeffrey Benusa",
+                    "url": "{{ siteUrl }}"
+                },
+                "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
+                "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
+                "inLanguage": "en",
+                "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "{{ project.url }}"
-                  }
-                }{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ]
-          },
-          {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "{{ siteUrl }}"
+                    "@id": "{{ entry.url }}"
+                },
+                "hasPart": [
+                    {% for project in craft.entries.section('projects').all() %}
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "{{ project.title }}",
+                        "operatingSystem": "All",
+                        "applicationCategory": "BusinessApplication",
+                        "description": "{{ project.description }}",
+                        "url": "{{ project.url }}",
+                        "creator": {
+                            "@type": "Person",
+                            "name": "Jeffrey Benusa",
+                            "url": "{{ siteUrl ~ 'about-me' }}"
+                        },
+                        "datePublished": "{{ project.postDate|date('Y-m-d') }}",
+                        "dateModified": "{{ project.dateUpdated|date('Y-m-d') }}",
+                        "inLanguage": "en",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "{{ project.url }}"
+                        }
+                    }{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "{{ siteUrl }}"
                     },
                     {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "Projects",
-                      "item": "{{ url('projects') }}"
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Projects",
+                        "item": "{{ url('projects') }}"
                     }
-                  ]
-                }
-              ]
+                ]
             }
+        ]
+    }
     </script>
 {% endblock %}
