@@ -43,6 +43,7 @@
 {% endblock %}
 
 {% block structuredData %}
+    {% set projects = craft.entries.section('projects').orderBy('dateUpdated desc').all() %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -74,22 +75,23 @@
                 "datePublished": "{{ entry.postDate|date('Y-m-d') }}",
                 "dateModified": "{{ entry.dateUpdated|date('Y-m-d') }}",
                 "inLanguage": "en",
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "{{ entry.url }}"
-                },
-                "hasPart": [
-                    {% for project in craft.entries.section('projects').all() %}
-                    {
-                        "@type": "WebPage",
-                        "@id": "{{ project.url }}",
-                        "name": "{{ project.title }}"
-                    }{% if not loop.last %},{% endif %}
-                    {% endfor %}
-                ]
-            },{
-                "@type": "BreadcrumbList",
-                "itemListElement": [
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "numberOfItems": {{ projects | length }},
+                    "itemListElement": [
+                      {{ projects | map(project => '{ "@id": "' ~ project.url ~ '#code" }') | join(', ') | raw }}
+                    ]
+                    },
+                    "mainEntityOfPage": {
+                        "@type": "CreativeWork",
+                        "@id": "{{ entry.url }}"
+                    },
+                    "hasPart": [
+                      {{ projects | map(project => '{ "@type": "CreativeWork", "@id": "' ~ project.url ~ '", "name": "' ~ project.title ~ '" }') | join(', ') | raw }}
+                    ]
+                },{
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,

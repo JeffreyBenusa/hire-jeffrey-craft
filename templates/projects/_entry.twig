@@ -122,7 +122,7 @@
             "@graph": [
                 {
                     "@type": "WebPage",
-                    "@id": "{{ entry.url }}",
+                    "@id": "{{ entry.url }}#webpage",
                     "name": "{{ entry.title }}",
                     "headline": "{{ entry.title }}",
                     "url": "{{ entry.url }}",
@@ -144,6 +144,7 @@
                     "@id": "{{ entry.url }}#code",
                     "name": "{{ entry.title }}",
                     "description": "{{ entry.description }}",
+                    "headline": "{{ entry.headline }}",
                     "url": "{{ entry.url }}",
                     "creator": {
                       "@id": "{{  craft.hireJeffrey.schemaPersonUrl }}"
@@ -157,9 +158,13 @@
                     "inLanguage": "en",
                     "mainEntityOfPage": {
                         "@type": "WebPage",
-                        "@id": "{{ entry.url }}"
+                        "@id": "{{ entry.url }}#webpage"
                     },
-                    "image": "{{ entry.previewImage.one().url ??? entry.logo.one().url ??? "" }}",
+                    "isPartOf": {
+                        "@type": "CollectionPage",
+                        "@id": "{{ url('projects') }}#webpage"
+                    },
+                    "image": "{{ entry.previewImage.one().url ??? entry.logo.one().url ??? null }}",
                     "about": [
                     {% for tag in [...tagMap.about, ...tagMap.programmingLanguage]  %}
                         {
